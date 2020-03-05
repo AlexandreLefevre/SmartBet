@@ -1,65 +1,36 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-  }
-  
-  const express = require('express')
-  const app = express()
-  const passport = require('passport')
-  const flash = require('express-flash')
-  const session = require('express-session')
-  
-  const initializePassport = require('./passport-config')
-  initializePassport(
-    passport,
-    email => users.find(user => user.email === email),
-    id => users.find(user => user.id === id)
-  )
-  
-  const users = []
-  
-  app.set('view-engine', 'ejs')
-  app.use(express.urlencoded({ extended: false }))
-  app.use(flash())
-  app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-  }))
-  app.use(passport.initialize())
-  app.use(passport.session())
+const express = require('express');
+const path = require('path');
+const pageRouter = require('./routes/pages');
 
-  app.get('/', (req, res) =>{
-    res.render('index.ejs', {name : 'kyle'})
+const app = express();
+
+app.use(express.urlencoded( { extended : false}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Template engine. PUG
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+//routers
+app.use('/', pageRouter);
+
+// Errors => page not found 404
+app.use((req, res, next) =>  {
+    var err = new Error('Page not found');
+    err.status = 404;
+    next(err);
 })
 
-app.get('/login', (req, res) =>{
-    res.render('login.ejs', {name : 'kyle'})
-})
+// Handling errors (send them to the client)
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.send(err.message);
+});
 
-app.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-}))
+// Setting up the server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000...');
+});
 
-app.get('/register', (req, res) =>{
-    res.render('register.ejs', {name : 'kyle'})
-})
-
-app.post('/register', (req, res) =>{
-    try {
-
-        users.push({
-            id: Date.now().toString(),
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        })
-        res.redirect('/login')
-    } catch (error) {
-        res.redirect('/login')
-    } 
-    console.log(users)
-} )
-  
-  app.listen(3000)
+module.exports = app;
