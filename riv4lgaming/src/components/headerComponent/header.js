@@ -4,7 +4,6 @@ class Header extends Component {
   render() {
      return(
 <header>
-  <link rel="stylesheet" href="C:\Users\Admin\Documents\GitHub\SmartBet\riv4lgaming\src\components\headerComponent\header.css"></link>
 <div class="overlay">
 <h1>Simply The Best</h1>
 <h3>Reasons for Choosing US</h3>
