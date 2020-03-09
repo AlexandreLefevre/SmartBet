@@ -2,22 +2,17 @@ import React,  {Component} from 'react';
 
 class Header extends Component {
   render() {
-     return (
-       <header>
-
-         <div className="logo">LOGO</div>
-
-         <nav>
-           <ul>
-             <li> <a href='#'> Home </a> </li>
-
-             <li> <a href='#'> Team </a> </li>
-
-             <li> <a href='#'> Contact </a> </li>
-           </ul>
-         </nav>
-
-       </header>
+     return(
+<header>
+  <link rel="stylesheet" href="C:\Users\Admin\Documents\GitHub\SmartBet\riv4lgaming\src\components\headerComponent\header.css"></link>
+<div class="overlay">
+<h1>Simply The Best</h1>
+<h3>Reasons for Choosing US</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+<br></br>
+	<button>READ MORE</button>
+</div>
+</header>
      );
   }
 }
