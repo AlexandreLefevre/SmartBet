@@ -7,7 +7,6 @@ class Header extends Component {
   render() {
      return(
 
-
       <header>
         <div className="logo">
           LOGO
@@ -29,9 +28,6 @@ class Header extends Component {
           </ul>
         </nav>
       </header>
-
-
-    
  
      );
   }
