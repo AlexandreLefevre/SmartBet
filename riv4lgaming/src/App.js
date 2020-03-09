@@ -7,6 +7,7 @@ import Homepage from './components/pages/homePage';
 
 //include
 import './Assets/CSS/default.css';
+import './Assets/CSS/header.css';
 
 class App extends Component {
   render() {
