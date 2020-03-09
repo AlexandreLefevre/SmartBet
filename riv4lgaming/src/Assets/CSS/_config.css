@@ -1,0 +1,19 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    cursor: grab;
+}
+a:hover{
+    color: white;
+}
+
+.container-fluid{
+    line-height: 24px;
+}

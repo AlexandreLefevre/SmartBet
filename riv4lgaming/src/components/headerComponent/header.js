@@ -1,9 +1,11 @@
 import React,  {Component} from 'react';
+import{
+  Link 
+}  from 'react-router-dom';
 
 class Header extends Component {
   render() {
      return(
-<<<<<<< HEAD
 
       <header>
         <div className="logo">
@@ -11,30 +13,22 @@ class Header extends Component {
         </div>
         <nav>
           <ul>
-            <li className="Acceuil">
-              <a href="#">Acceuil</a>
+            <li className="first">
+              <Link to="/">Acceuil</Link>
             </li>
-            <li className="Equipe">
-              <a href="#">Equipe</a>
+            <li>
+              <Link to="/111">111</Link>
             </li>
-            <li className="Contact">
-              <a href="#">Contact</a>
+            <li>
+              <Link to="/222">222</Link>
+            </li>
+            <li className="last">
+              <Link to="/login">Login / Register</Link>
             </li>
           </ul>
         </nav>
       </header>
 
-=======
-<header>
-<div>
-<h1>Simply The Best</h1>
-<h3>Reasons for Choosing US</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
-<br></br>
-	<button>READ MORE</button>
-</div>
-</header>
->>>>>>> 484f6cce35f7fb73bd0c712455281255753ed52e
      );
   }
 }
