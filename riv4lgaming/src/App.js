@@ -6,7 +6,7 @@ import Footer from './components/footerComponent/footer';
 import Homepage from './components/pages/homePage';
 
 //include
-//import './Assets/CSS/default.min.css';
+import './Assets/CSS/default.css';
 
 class App extends Component {
   render() {
