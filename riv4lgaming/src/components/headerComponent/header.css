@@ -2,7 +2,7 @@
 body{height: 900px;}
 header {
 	/*background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');*/
-	background-color: black; 
+	background-color: yellowgreen; 
 	text-align: center;
 	width: 100%;
 	height: auto;
@@ -45,4 +45,8 @@ button {
 }
 button:hover{
 	cursor: pointer;
+}
+
+footer{
+	background-color: teal;
 }
