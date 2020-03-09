@@ -1,1 +1,1 @@
-# SmartBet #riv4lgaming
+# SmartBet
