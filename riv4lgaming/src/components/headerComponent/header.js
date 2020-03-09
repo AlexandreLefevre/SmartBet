@@ -6,28 +6,17 @@ import{
 class Header extends Component {
   render() {
      return(
-
       <header>
-        <div className="logo">
-          LOGO
-        </div>
-        <nav>
-          <ul>
-            <li className="first">
-              <Link to="/">Acceuil</Link>
-            </li>
-            <li>
-              <Link to="/111">111</Link>
-            </li>
-            <li>
-              <Link to="/222">222</Link>
-            </li>
-            <li className="last">
-              <Link to="/login">Login / Register</Link>
-            </li>
-          </ul>
-        </nav>
+      <div>
+      <h1>Simply The Best</h1>
+      <h3>Reasons for Choosing US</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+      <br></br>
+      <button>READ MORE</button>
+      </div>
       </header>
+
+    
 
      );
   }
