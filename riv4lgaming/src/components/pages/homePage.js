@@ -8,7 +8,7 @@ class Homepage extends Component {
           <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
             <div>
               <h2>
-                <p class="niveau1">Bienvenu sur Riv4lGaming ! </p>
+                <p class="niveau1">Bienvenue sur Riv4lGaming ! </p>
                 <p class="niveau1">Qu'est ce que Riv4lGaming ? </p>
               </h2>
                 <p>Riv4lGaming est un site vous permettant de trouver des partenaires avec qui jouer sur vos différents jeu en ligne. 
