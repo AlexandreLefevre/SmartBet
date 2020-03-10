@@ -192,5 +192,9 @@ section {
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
+	.lockfoot {
+		position: absolute;
+  		bottom: 0;
+	}
 
 }
