@@ -3,7 +3,7 @@ import React,  {Component} from 'react';
 class Footer extends Component {
   render() {
      return (
-        <section>
+        <section class="lockfoot">
       <footer class="footer-distributed">
 
       <div class="footer-left">
