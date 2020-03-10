@@ -1,12 +1,10 @@
 body {
     font: bold 14px Sans-Serif;
-<<<<<<< HEAD
-=======
   padding: 2rem;
   background-image: url(https://image.freepik.com/free-vector/abstract-gray-white-geometric-hexagons-background_78474-287.jpg);
   background-repeat: no-repeat; 
   background-size: cover; 
->>>>>>> 42c85d1ed87bbac071014142bc25db4d1c344051
+
   }
 
 h2 {
