@@ -1,8 +1,8 @@
 body {
     font: bold 14px Sans-Serif;
-  background-image: url(https://image.freepik.com/free-vector/abstract-gray-white-geometric-hexagons-background_78474-287.jpg);
-  background-repeat: no-repeat; 
-  background-size: cover; 
+    background-image: url(https://image.freepik.com/free-vector/abstract-gray-white-geometric-hexagons-background_78474-287.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
 
   }
 
@@ -13,7 +13,7 @@ h2 {
   }
 
 
-  * {
+* {
     box-sizing: border-box;
   }
 img {
