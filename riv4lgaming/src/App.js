@@ -14,9 +14,11 @@ import Page111 from './components/pages/111Page';
 import Page222 from './components/pages/222Page';
 
 
+
 //include
 import "./Assets/CSS/default.css";
 import "./Assets/CSS/footer.css";
+import "./Assets/CSS/body.css"
 
 class App extends Component {
   render() {
