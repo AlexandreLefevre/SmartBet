@@ -43,6 +43,9 @@ header nav ul li a {
     line-height: normal;
     color: white;
 }
-.riv4l {
+.riv4l #black{
+    color: black;
+}
+.riv4l #orange{
     color: orangered;
 }
