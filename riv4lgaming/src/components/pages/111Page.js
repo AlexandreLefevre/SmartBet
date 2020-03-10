@@ -5,10 +5,10 @@ class Page111 extends Component {
      return (
        <div className="container-fluid">
 
-        <h1>page 111</h1>
+        <h1>Forum</h1>
 
         <p>
-            111
+            Forum
         </p>
 
        </div>
