@@ -5,7 +5,6 @@ import{
   Link 
 }  from 'react-router-dom';
 
-
 //components
 import Header from './components/headerComponent/header';
 import Footer from './components/footerComponent/footer';
@@ -30,8 +29,6 @@ class App extends Component {
          <Route exact path='/login' component= {LoginPage} />
          <Route exact path='/111' component= {Page111} />
          <Route exact path='/222' component= {Page222} />
-
-
 
          <Footer />
 
