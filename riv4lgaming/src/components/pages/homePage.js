@@ -43,7 +43,11 @@ class Homepage extends Component {
             - les types de BO en fonction du round dans le tournoi<br />
             - avec ou sans cash prize<br />
           Les jeux disponibles sont les suivants : <br />
-          <img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2"></img>
+          <img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="sc2"></img>
+          <img src="https://fontmeme.com/images/League-of-Legends-Game-Logo.jpg" alt="LoL" class="LoL"></img>
+          <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" class="CSGO"></img>
+          <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" class="RL"></img>
+          
          </p>
         </div>
        </div>
