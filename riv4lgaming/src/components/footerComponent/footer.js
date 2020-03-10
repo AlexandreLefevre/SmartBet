@@ -11,15 +11,15 @@ class Footer extends Component {
          <h3>Riv4l<span>Gaming</span></h3>
 
          <p class="footer-links">
-            <a href="#" class="link-1">Acceuil</a>
+            <a href="/" class="link-1">Acceuil</a>
             
-            <a href="#">111</a>
+            <a href="/111">111</a>
          
-            <a href="#">222</a>
+            <a href="/222">222</a>
          
             <a href="#">A propos</a>
             
-            <a href="#">Faq</a>
+            <a href="/faq">Faq</a>
             
             <a href="#">Contact</a>
          </p>
