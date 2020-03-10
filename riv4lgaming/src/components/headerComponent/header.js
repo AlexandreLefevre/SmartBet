@@ -17,10 +17,10 @@ class Header extends Component {
               <Link to="/">Acceuil</Link>
             </li>
             <li>
-              <Link to="/111">111</Link>
+              <Link to="/111">Forum</Link>
             </li>
             <li>
-              <Link to="/222">222</Link>
+              <Link to="/222">Tournoi</Link>
             </li>
             <li className="last">
               <Link to="/login">Login / Register</Link>
