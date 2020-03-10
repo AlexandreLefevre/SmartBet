@@ -8,7 +8,7 @@ class Footer extends Component {
 
       <div class="footer-left">
 
-         <h3>Riv4l<span>Gaming</span></h3>
+         <h3>Riv<a href='/cache'>4</a>l<span>Gaming</span></h3>
 
          <p class="footer-links">
             <a href="#" class="link-1">Acceuil</a>
