@@ -13,9 +13,9 @@ class Footer extends Component {
          <p class="footer-links">
             <a href="#" class="link-1">Acceuil</a>
             
-            <a href="#">111</a>
+            <a href="#">Forum</a>
          
-            <a href="#">222</a>
+            <a href="#">Tournoi</a>
          
             <a href="#">A propos</a>
             
@@ -24,7 +24,7 @@ class Footer extends Component {
             <a href="#">Contact</a>
          </p>
 
-         <p class="footer-company-name">Riv4lGaming © 2018</p>
+         <p class="footer-company-name">Riv4lGaming © 2020</p>
       </div>
 
       <div class="footer-center">
@@ -36,7 +36,7 @@ class Footer extends Component {
 
          <div>
             <i class="fa fa-phone"></i>
-            <p>0470341601</p>
+            <p>0470.34.16.01</p>
          </div>
 
          <div>
