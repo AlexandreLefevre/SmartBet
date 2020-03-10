@@ -43,6 +43,7 @@ class Homepage extends Component {
                     - avec ou sans cash prize<br />
                   Les jeux disponibles sont les suivants : <br />
                   </p>
+                  
                   <div class="row">
                   <div class="column">
                     <a href="https://starcraft2.com/fr-fr/">

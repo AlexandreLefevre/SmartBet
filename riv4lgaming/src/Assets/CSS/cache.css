@@ -21,6 +21,11 @@ html, body {
   font-family: Acme, Arial, sans-serif;
 }
 
+body .cachebody {
+  margin-top: 100px;
+  height: 500px;
+}
+
 form {
   position: absolute;
   top: 0;

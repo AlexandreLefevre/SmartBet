@@ -16,6 +16,7 @@ import Forum from './components/pages/forum';
 import Tournois from './components/pages/tournois';
 import cache from './components/pages/cache';
 import Faq from './components/pages/faq';
+import Termandprivacy from './components/pages/termandprivacy';
 
 
 //include
@@ -23,6 +24,7 @@ import "./Assets/CSS/default.css";
 import "./Assets/CSS/footer.css";
 import "./Assets/CSS/body.css";
 import "./Assets/CSS/cache.css";
+import "./Assets/CSS/login.css";
 
 class App extends Component {
   render() {
@@ -40,6 +42,8 @@ class App extends Component {
          <Route exact path='/tournois' component= {Tournois} />
          <Route exact path='/cache' component= {cache} />
          <Route exact path='/faq' component= {Faq} />
+         <Route exact path='/tandp' component= {Termandprivacy} />
+
 
          <Footer />
 
