@@ -9,7 +9,7 @@ class Header extends Component {
 
       <header>
         <div className="logo">
-          <img src="./src/images/riv4lgaming2.png" alt="logo"></img>
+           <p>LOGO</p>
         </div>
         <nav>
           <ul>
@@ -17,10 +17,10 @@ class Header extends Component {
               <Link to="/">Acceuil</Link>
             </li>
             <li>
-              <Link to="/111">Forum</Link>
+              <Link to="/forum">Forum</Link>
             </li>
             <li>
-              <Link to="/222">Tournoi</Link>
+              <Link to="/tournois">Tournois</Link>
             </li>
             <li className="last">
               <Link to="/login">Login / Register</Link>

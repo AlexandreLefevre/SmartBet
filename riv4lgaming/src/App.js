@@ -10,10 +10,12 @@ import Header from './components/headerComponent/header';
 import Footer from './components/footerComponent/footer';
 import Homepage from './components/pages/homePage';
 import LoginPage from './components/pages/loginPage';
-import Page111 from './components/pages/111Page';
-import Page222 from './components/pages/222Page';
+import RegisterPage from './components/pages/registerPage';
+import Profile from './components/pages/profile';
+import Forum from './components/pages/forum';
+import Tournois from './components/pages/tournois';
 import cache from './components/pages/cache';
-
+import Faq from './components/pages/faq';
 
 
 //include
@@ -32,9 +34,12 @@ class App extends Component {
 
          <Route exact path='/' component= {Homepage} />      
          <Route exact path='/login' component= {LoginPage} />
-         <Route exact path='/111' component= {Page111} />
-         <Route exact path='/222' component= {Page222} />
+         <Route exact path='/register' component= {RegisterPage} />
+         <Route exact path='/profile' component= {Profile} />
+         <Route exact path='/forum' component= {Forum} />
+         <Route exact path='/tournois' component= {Tournois} />
          <Route exact path='/cache' component= {cache} />
+         <Route exact path='/faq' component= {Faq} />
 
          <Footer />
 

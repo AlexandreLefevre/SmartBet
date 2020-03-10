@@ -1,14 +1,14 @@
 import React,  {Component} from 'react';
 
-class Page111 extends Component {
+class Tournois extends Component {
   render() {
      return (
        <div className="container-fluid">
 
-        <h1>Forum</h1>
+        <h1>Tournoi</h1>
 
         <p>
-            Forum
+            Tournoi
         </p>
 
        </div>
@@ -17,4 +17,4 @@ class Page111 extends Component {
   }
 }
 
-export default Page111;
+export default Tournois;

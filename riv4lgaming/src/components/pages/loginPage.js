@@ -5,7 +5,7 @@ class LoginPage extends Component {
      return (
        <div className="container-fluid">
 
-        <h1>login page</h1>
+        <h1>Login Page</h1>
 
         <p>
             login

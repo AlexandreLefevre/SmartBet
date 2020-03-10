@@ -1,4 +1,7 @@
 import React,  {Component} from 'react';
+import{
+   Link 
+ }  from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -11,17 +14,14 @@ class Footer extends Component {
          <h3>Riv<a href='/cache' class="gris">4</a>l<span>Gaming</span></h3>
 
          <p class="footer-links">
-            <a href="#" class="link-1">Acceuil</a>
+            <Link to="/">Acceuil</Link>
             
-            <a href="#">Forum</a>
+            <Link to="/forum">Forum</Link>
          
-            <a href="#">Tournoi</a>
-         
-            <a href="#">A propos</a>
+            <Link to="/tournois">Tournois</Link>
             
-            <a href="#">Faq</a>
+            <Link to="/faq">Faq</Link>
             
-            <a href="#">Contact</a>
          </p>
 
          <p class="footer-company-name">Riv4lGaming © 2020</p>
