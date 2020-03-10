@@ -45,7 +45,9 @@ class Homepage extends Component {
                   </p>
                   <div class="row">
                   <div class="column">
-                    <img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="sc2" ></img>
+                    <a href="https://starcraft2.com/fr-fr/">
+                    < img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="sc2" ></img>
+                    </a>
                   </div>
                   <div class="column">
                     <img src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" alt="LoL" class="LoL" ></img>
