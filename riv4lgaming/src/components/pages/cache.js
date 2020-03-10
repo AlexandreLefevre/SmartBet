@@ -3,7 +3,6 @@ import React,  {Component} from 'react';
 class cache extends Component {
   render() {
      return (
-       <div className="container-fluid">
 <form>
 
 <input type="radio" id="rock-rock" name="rock-paper-scissors"></input>
@@ -64,8 +63,6 @@ class cache extends Component {
 </div>
 
 </form>
-</div>
-
      );
   }
 }
