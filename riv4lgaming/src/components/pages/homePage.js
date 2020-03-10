@@ -5,7 +5,7 @@ class Homepage extends Component {
      return (
        <body>
        <div className="container-fluid">
-        
+
         <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
 
         <img src="./src/images/riv4lgaming.png" alt="logo"></img>
@@ -38,12 +38,13 @@ class Homepage extends Component {
             - avec ou sans restriction de niveau(tournoi autorisé à tout le monde ou que à certains "rang" sur le jeu)<br />
             - nombre de participants maximum<br />
             - les types de BO en fonction du round dans le tournoi<br />
-            - avec ou sans cash prize<br />
+            - avec ou sans cash prize
          </p>
         </div>
 
        </div>
        </body>
+
      );
   }
 }
