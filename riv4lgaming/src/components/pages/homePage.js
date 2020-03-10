@@ -5,12 +5,12 @@ class Homepage extends Component {
      return (
        <div className="container-fluid">
 
-        <h1>home page</h1>
+        <h1 class="titleriv4l">Riv4lGaming</h1>
 
         <img src="./src/images/riv4lgaming.png" alt="logo"></img>
         <div>
           <p>Bienvenu sur Riv4lGaming ! <br />
-          Vous désirez de nouvelles aventures tout démarre ici.
+            Vous désirez de nouvelles aventures tout démarre ici.
           </p>
         </div>
         <div >
