@@ -5,13 +5,12 @@ class Homepage extends Component {
      return (
        <body>
        <div className="container-fluid">
-
         <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
-
-        <img src="./src/images/riv4lgaming.png" alt="logo"></img>
         <div>
-          <p class="niveau1">Bienvenu sur Riv4lGaming ! </p>
-          <p class="niveau1">Qu'est ce que Riv4lGaming ? </p>
+          <h2>
+            <p class="niveau1">Bienvenu sur Riv4lGaming ! </p>
+            <p class="niveau1">Qu'est ce que Riv4lGaming ? </p>
+          </h2>
           <p>Riv4lGaming est un site vous permettant de trouver des partenaires avec qui jouer sur vos différents jeu en ligne. 
             Mais ce n'est pas tout, Riv4lGaming vous propose aussi de participer à des tounois sur différents jeux. Ces tournois sont créés soit
             par Riv4lGaming ou par sa communauté. <br />
@@ -19,7 +18,9 @@ class Homepage extends Component {
           </p>
         </div>
         <div>
-          <p class="niveau1">Forum</p>
+          <h2>
+            <p class="niveau1">Forum</p>
+          </h2>
           <p>Comment cette partie du site fonctionne ?<br />
           C'est très simple, vous créez votre annonce en indiquant ce que vous recherchez par exemple : <br />
           "[LOL Mid Gold] Recherche teammates pour ranked."<br />
@@ -28,7 +29,9 @@ class Homepage extends Component {
           </p>
         </div>
         <div>
+        <h2>
           <p class="niveau1">Tournoi</p>
+        </h2>
           <p>Comment cette partie du site fonctionne ?<br />
           Vous retrouverez sur cette partie du site différents tournois.<br />
           Les tournois seront mis à dispositions de tous.<br />
@@ -38,10 +41,11 @@ class Homepage extends Component {
             - avec ou sans restriction de niveau(tournoi autorisé à tout le monde ou que à certains "rang" sur le jeu)<br />
             - nombre de participants maximum<br />
             - les types de BO en fonction du round dans le tournoi<br />
-            - avec ou sans cash prize
+            - avec ou sans cash prize<br />
+          Les jeux disponibles sont les suivants : <br />
+          <img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2"></img>
          </p>
         </div>
-
        </div>
        </body>
 
