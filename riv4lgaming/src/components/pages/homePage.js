@@ -5,7 +5,7 @@ class Homepage extends Component {
      return (
        <div className="container-fluid">
 
-        <h1 class="riv4l">Riv4lGaming</h1>
+        <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
 
         <img src="./src/images/riv4lgaming.png" alt="logo"></img>
         <div>
