@@ -28,6 +28,8 @@ class Homepage extends Component {
                 et pour finir le titre de votre annonce résumant pourquoi vous la créée.
                 </p>
             </div>
+            <div class="tournoi">
+              <img src="https://d2m5zqqcosbe2i.cloudfront.net/uploads/media/1/1540-schema-bracket-solo.jpg" class="tournoi"></img>
                 <h2>
                   <p class="niveau1">Tournoi</p>
                 </h2>
@@ -43,29 +45,45 @@ class Homepage extends Component {
                     - avec ou sans cash prize<br />
                   Les jeux disponibles sont les suivants : <br />
                   </p>
-                  
-                  <div class="row">
-                  <div class="column">
+              </div>  
+              <div class="row" class="slideshow-container">
+              <div class="column" class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
                     <a href="https://starcraft2.com/fr-fr/">
-                      < img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="jeu"></img>
+                      <img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="jeu"></img>
                     </a>
-                  </div>
-                  <div class="column">
+                  <div class="text">Caption Text</div>
+              </div>
+              <div class="column" class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
                     <a href="https://play.euw.leagueoflegends.com/fr_FR">
                       <img src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" alt="LoL" class="jeu"></img>
                     </a>
-                  </div>  
-                  <div class="column">
-                    <a href="https://blog.counter-strike.net/">
-                      <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" class="jeu"></img>
-                    </a>
-                  </div>
-                  <div class="column">
-                    <a href="https://www.rocketleague.com/">
-                      <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" class="jeu"></img>
-                    </a>
-                  </div>
+                <div class="text">Caption Two</div>
+              </div>  
+              <div class="column" class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                  <a href="https://blog.counter-strike.net/">
+                    <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" class="jeu"></img>
+                  </a>
+                <div class="text">Caption Three</div>
+              </div>
+              <div class="column" class="mySlides fade">
+                <div class="numbertext">4 / 4</div>>
+                  <a href="https://www.rocketleague.com/">
+                    <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" class="jeu"></img>
+                  </a>
+                <div class="text">Caption Four</div>
                 </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <div class="bouton_jeu">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                  </div>
+              </div>
         </div>
     </body>
 
