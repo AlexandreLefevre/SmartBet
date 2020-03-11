@@ -6,16 +6,16 @@ class LoginPage extends Component {
       <body class="loginbody">
       <div className="container-fluid">
        
-      <h1 class="titre">Login</h1>
+      <h1 class="titre">Connection</h1>
  
  <form>
    <div class="container">
-     <p>Sign in to start your session.</p>
-     <p>username</p>
+     <p>Connection</p>
+     <p>Pseudo</p>
      <input type="text" placeholder="username" name="username" required></input>
-     <p>password</p>
+     <p>Mot de passe</p>
      <input type="password" placeholder="Enter Password" name="psw" required></input>
-     <p>Register a new membership <a href="/register" >Register</a>.</p>
+     <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
  
      </div>
  </form>
