@@ -17,15 +17,15 @@ class RegisterPage extends Component {
     <p>Email</p>
     <input type="text" placeholder="Entrer Email" name="email" required></input>
     <p>Mot de passe</p>
-    <input type="password" placeholder="Entrer Mot de passe" name="psw" required></input>
-    <p>Mot de passe</p>
-    <input type="password" placeholder="Répéter Mot de passe" name="psw-repeat" required></input>
+    <input type="password" placeholder="Entrer votre mot de passe" name="psw" required></input>
+    <p>Confirmation Mot de passe</p>
+    <input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required></input>
     <div class="clearfix">
       <button type="submit" class="signupbtn">Enregistrement</button>
     </div>
     <p></p>
     <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>
-    <p>Connectez vous pour lancer votre session : <a href="/login" >Login</a>.</p> 
+    <p>Connectez vous pour lancer votre session : <a href="/login" >Connexion</a>.</p> 
     
 
 
