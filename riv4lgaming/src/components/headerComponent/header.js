@@ -9,12 +9,12 @@ class Header extends Component {
 
       <header>
         <div className="logo">
-           <p>LOGO</p>
+
         </div>
         <nav>
           <ul>
             <li className="first">
-              <Link to="/">Acceuil</Link>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
               <Link to="/forum">Forum</Link>
