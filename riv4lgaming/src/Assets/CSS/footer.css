@@ -199,4 +199,9 @@ section {
 }
 .gris{
 	color: rgb(180, 180, 180);
+	line-height: normal;
+    color: white;
+}
+.gris:hover{
+	text-decoration: none;
 }

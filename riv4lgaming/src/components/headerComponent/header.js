@@ -8,8 +8,8 @@ class Header extends Component {
      return(
 
       <header>
-        <div className="logo">
-
+        <div>
+        <img src="https://github.com/AlexandreLefevre/SmartBet/blob/master/riv4lgaming/image/riv4lgaming.png?raw=true" alt="logo" class="logo"></img>
         </div>
         <nav>
           <ul>

@@ -31,7 +31,7 @@ class Homepage extends Component {
                 <h2>
                   <p class="niveau1">Tournoi</p>
                 </h2>
-                  <p>Comment cette partie du site fonctionne ?<br />
+                  <p>Comment cette partie du site fonctionne ?<br/>
                   Vous retrouverez sur cette partie du site différents tournois.<br />
                   Les tournois seront mis à dispositions de tous.<br />
                   Chaque tournoi sera différent en fonction de son créateur. N'importe qui pourra créer un tournoi et définir les paramètres de celui-ci. 
@@ -68,11 +68,14 @@ class Homepage extends Component {
                     </a>
                   </div>
                 </div>
+     
               
     </body>
 
      );
   }
 }
+
+
 
 export default Homepage;
