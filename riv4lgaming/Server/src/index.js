@@ -8,7 +8,7 @@ const port = 4000
 mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
 
-  mongoose.connection.openUri(`mongodb://localhost:27017/reviv4lgamingDB`, {
+  mongoose.connection.openUri(`mongodb://localhost:27017/riv4lgamingDB`, {
     keepAlive: true,
     reconnectTries: Number.MAX_VALUE,
     useNewUrlParser: true,
@@ -27,11 +27,11 @@ db.on('error', err => {
 
 app.use((req, res, next) => {
 
-  // NOTE: Should modify k8s/configs/service.yml too
+  // autorisation des différentes requêtes et origines
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Request-Method', 'GET, POST, PUT, DELETE, OPTIONS')
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With, x-access-token, X-Expiry, X-Client, X-Access-Token, X-pass, X-Uuid, Content-Type, Authorization, x-access-id')
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-Expiry, X-Client, X-Uuid, Content-Type, Authorization, ')
 
   next()
 })
@@ -39,7 +39,6 @@ db.once('open', async () => {
 
   app.get('/', (req, res) => res.send('Hello World!'))
 
-// http://localhost:3000/createAccount?email=henri@ballin.co&password=mpd1234
   app.get('/createAccount', async (req, res) => {
     console.log(req.query);
 

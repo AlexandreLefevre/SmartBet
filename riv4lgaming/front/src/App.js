@@ -2,6 +2,7 @@ import React,  {Component} from 'react';
 import{
   BrowserRouter as Router,
   Route,
+  Switch,
   Link 
 }  from 'react-router-dom';
 
@@ -25,15 +26,31 @@ import "./Assets/CSS/footer.css";
 import "./Assets/CSS/body.css";
 import "./Assets/CSS/cache.css";
 import "./Assets/CSS/login.css";
-  
+import { initialize, set, pageview } from 'react-ga';
+initialize('UA-161704283-1', {
+  debug: true,
+  siteSpeedSampleRate: 100,
+  titleCase: false,
+  gaOptions: {
+    userId: 123
+  }
+});
+const logPageView = () => {
+  set({ page: window.location.pathname });
+  pageview(window.location.pathname);
+  return null;
+};
+
 class App extends Component {
   render() {
+    logPageView();
      return (
-       <Router>
+       <Router >
        <div className="App">
 
          <Header />
-
+         <Route path="/" component={logPageView} />
+         <Switch>
          <Route exact path='/' component= {Homepage} />      
          <Route exact path='/login' component= {LoginPage} />
          <Route exact path='/register' component= {RegisterPage} />
@@ -43,7 +60,8 @@ class App extends Component {
          <Route exact path='/cache' component= {cache} />
          <Route exact path='/faq' component= {Faq} />
          <Route exact path='/tandp' component= {Termandprivacy} />
-
+         </Switch>
+        
 
          <Footer />
 
@@ -54,38 +72,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-const axios = require('axios');
-
-
-function App() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const creatAccont =() => {
-    console.log('email =>', email);
-  console.log('password =>', password);
-  axios.get(`http://localhost:4000/createAccount?email=${email}&password=${password}`)
-  .then((response) => {
-    console.log(response);
-
-  })
-
-  }
-  return (
-    <div className="App">
-      <p>Email1</p>
-      <input onChange={(e) => { setEmail(e.target.value) }} />
-      <p>password1</p>
-      <input onChange={(e) => { setPassword(e.target.value) }} />
-      <button onClick={creatAccont}>Cree</button>
-    </div>
-  );
-}
-
-export default App; */
