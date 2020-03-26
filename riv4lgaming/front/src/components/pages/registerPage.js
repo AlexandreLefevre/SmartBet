@@ -9,24 +9,35 @@ class RegisterPage extends Component {
   }
 
   updatEmail = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({email:e.target.value});
   }
 
   updatPseudo = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({pseudo:e.target.value});
   }
 
   updatPassword = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({password:e.target.value});
   }
 
   creatAccount = (e) => {
     e.preventDefault()
-    console.log("création account", this.state.email, this.state.password, this.state.pseudo);
-    axios.get(`http://localhost:4000/createAccount?email=${this.state.email}&password=${this.state.pseudo}&pseudo=${this.state.password}`)
+    console.log("création account", this.state.email, this.state.pseudo);
+    axios({
+      method: 'post',
+      /*headers: {
+        'Access-Control-Allow-Origin': '*',
+      },*/
+      url: 'http://localhost:4000/createAccount',
+      data: {
+        email: this.state.email,
+        password: this.state.password,
+        pseudo: this.state.pseudo,
+      }
+    })
   .then((response) => {
     console.log(response);
 
@@ -67,7 +78,6 @@ class RegisterPage extends Component {
      );
   }
 }
-// nodemailer 
 /*
 sendEmail (name, email, message) {
   fetch('/send', {

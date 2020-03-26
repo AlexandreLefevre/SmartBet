@@ -18,6 +18,7 @@ import Tournois from './components/pages/tournois';
 import cache from './components/pages/cache';
 import Faq from './components/pages/faq';
 import Termandprivacy from './components/pages/termandprivacy';
+import VerifEmail from './components/pages/verifEmail';
 
 
 //include
@@ -60,6 +61,7 @@ class App extends Component {
          <Route exact path='/cache' component= {cache} />
          <Route exact path='/faq' component= {Faq} />
          <Route exact path='/tandp' component= {Termandprivacy} />
+         <Route exact path='/verifEmail' component= {VerifEmail} />
          </Switch>
         
 
