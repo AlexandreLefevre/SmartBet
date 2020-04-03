@@ -1,11 +1,26 @@
 import React,  {Component} from 'react';
+import { connect } from "react-redux"; 
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
 
 class Homepage extends Component {
   render() {
+    console.log(this.props.user);
      return (
        <body>
         <div className="container-fluid">
           <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
+          {this.props.user && this.props.user.email !== "" && (
+            <h1 style={{color: "red"}}>
+              {this.props.user.email}
+            </h1>
+          )
+
+          }
             <div>
               <h2>
                 <p class="niveau1">Bienvenue sur Riv4lGaming ! </p>
@@ -67,9 +82,7 @@ class Homepage extends Component {
                       <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" class="jeu"></img>
                     </a>
                   </div>
-                </div>
-     
-              
+                </div>   
     </body>
 
      );
@@ -77,5 +90,4 @@ class Homepage extends Component {
 }
 
 
-
-export default Homepage;
+export default connect (mapStateToProps) (Homepage);

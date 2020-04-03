@@ -1,5 +1,7 @@
 import React,  {Component} from 'react'
 import axios from 'axios'
+import { connect } from "react-redux"; 
+
 
 class LoginPage extends Component {
   state = {
@@ -27,6 +29,10 @@ class LoginPage extends Component {
   .then((response) => {
     console.log(response);
     this.setState({error: ""})
+    this.props.dispatch({
+      type: "loginUser", 
+      data: response.data.user,
+    })       
   })
   .catch(r => {
   if (r.response){
@@ -62,4 +68,8 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapDispatchToProps = dispatch => {
+      return {dispatch}
+}
+
+export default connect (null, mapDispatchToProps) (LoginPage);

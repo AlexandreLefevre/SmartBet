@@ -5,6 +5,10 @@ import{
   Switch,
   Link 
 }  from 'react-router-dom';
+import { Provider } from "react-redux"; 
+import { createStore, compose } from "redux";
+import rootReducer from "./reducers/rootReducer"
+
 
 //components
 import Header from './components/headerComponent/header';
@@ -28,8 +32,11 @@ import "./Assets/CSS/body.css";
 import "./Assets/CSS/cache.css";
 import "./Assets/CSS/login.css";
 import { initialize, set, pageview } from 'react-ga';
+
+const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 
+
 initialize('UA-161704283-1', {
-  debug: true,
+  debug: false,
   siteSpeedSampleRate: 100,
   titleCase: false,
   gaOptions: {
@@ -46,6 +53,7 @@ class App extends Component {
   render() {
     logPageView();
      return (
+       <Provider store ={store}>
        <Router >
        <div className="App">
 
@@ -69,6 +77,7 @@ class App extends Component {
 
        </div>
        </Router>
+       </Provider>
      );
   }
 }
