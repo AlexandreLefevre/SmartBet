@@ -10,17 +10,21 @@ class RegisterPage extends Component {
 
   updatEmail = (e) => {
     //console.log(e.target.value);
-    this.setState({email:e.target.value});
+    this.setState({email: e.target.value});
   }
 
   updatPseudo = (e) => {
     //console.log(e.target.value);
-    this.setState({pseudo:e.target.value});
+    this.setState({pseudo: e.target.value});
   }
 
   updatPassword = (e) => {
     //console.log(e.target.value);
-    this.setState({password:e.target.value});
+    this.setState({password: e.target.value});
+  }
+
+  updatPasswordVerify = (e) => {
+    this.setState({passwordVerify: e.target.value})
   }
 
   creatAccount = (e) => {
@@ -28,20 +32,25 @@ class RegisterPage extends Component {
     console.log("création account", this.state.email, this.state.pseudo);
     axios({
       method: 'post',
-      /*headers: {
-        'Access-Control-Allow-Origin': '*',
-      },*/
       url: 'http://localhost:4000/createAccount',
       data: {
         email: this.state.email,
         password: this.state.password,
         pseudo: this.state.pseudo,
+        passwordVerify: this.state.passwordVerify,
       }
     })
   .then((response) => {
-    console.log(response);
-
+    console.log(response)
+    this.setState({error: ""})
   })
+  .catch(r => {
+    if (r.response){
+        this.setState({
+        error: r.response.data
+        })
+      }
+    })
   }
   render() {
      return ( 
@@ -61,11 +70,11 @@ class RegisterPage extends Component {
     <p>Mot de passe</p>
     <input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></input>
     <p>Confirmation Mot de passe</p>
-    <input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required></input>
+    <input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></input>
     <div class="clearfix">
       <button type="submit" class="signupbtn" onClick={this.creatAccount}>Enregistrement</button>
     </div>
-    <p></p>
+    <p style={{color: "red"}}>{this.state.error}</p>
     <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>
     <p>Connectez vous pour lancer votre session : <a href="/login" >Connexion</a>.</p> 
     

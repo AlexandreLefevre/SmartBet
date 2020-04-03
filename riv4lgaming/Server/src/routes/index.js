@@ -24,18 +24,22 @@ app.put('/createAccount', async (req, res) => {
 
 app.post('/createAccount', async (req, res) => {
     console.log(req.body);
-
+    try{
+    if (req.body.password !== req.body.passwordVerify){
+      res.status(404).send("wallah c'est pas le même mdp que tu as écrit")
+    }
     const hash = await bcrypt.hash(req.body.password, 10)
     const verif = uuid()
     const myUser = new UserModel({
       email: req.body.email,
       password: hash,
       tokenEmail : verif,
+      pseudo: req.body.pseudo,
     })
     await myUser.save()
     await envoiEmail(req.body.email, verif)
     res.send('Account created') //requête fini on envoie rien après
-  
+  }catch(err) {console.log(err)}
 })
     app.get('/createAccount', async (req, res) => {
         const user = await UserModel.findOne({email: req.query.email})
@@ -52,5 +56,25 @@ app.post('/createAccount', async (req, res) => {
       }
       res.send('ok')
   })
+  app.get('/loginAccount', async (req, res) => {
+    console.log(req.query)
+    const user = await UserModel.findOne({email: req.query.email})
+    if (!user){
+      res.status(404).send("Nous n'avons pas trouvé l'utilisateur.")
+    }
+    if(user.isEmailVerify){
+      res.status(403).send("Vous n'avez pas vérifié votre adresse Email. Vérifiez vos spams si jamais.")
+    }
+    console.log(user)
+    const isVerify = await user.authenticate(req.query.password)
+    if (!isVerify) {
+      res.status(404).send("Login failed.")
+    }
+    console.log(isVerify)
+    res.send({user: user})
+  })
+  
 }
+
+
 module.exports = createRouter;

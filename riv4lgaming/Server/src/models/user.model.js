@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+
 const UserSchema = new mongoose.Schema({
   email: {
-    unique : true,
-    type : String,
+    unique: true,
+    type: String,
   },
   password: String,
   pseudo : {
@@ -17,6 +19,12 @@ const UserSchema = new mongoose.Schema({
 }, {
   timestamps: true,
 })
+
+UserSchema.methods.authenticate = async function (password) {
+      const value = await bcrypt.compare(password, this.password)
+      return value
+}
+
 
 const user = mongoose.model('user', UserSchema)
 
