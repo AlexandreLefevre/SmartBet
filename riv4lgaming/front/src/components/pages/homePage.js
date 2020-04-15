@@ -19,7 +19,6 @@ class Homepage extends Component {
               {this.props.user.email}
             </h1>
           )
-
           }
             <div>
               <h2>
