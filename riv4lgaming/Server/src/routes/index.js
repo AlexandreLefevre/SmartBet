@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const uuid = require('uuid/v1')
 const {envoiEmail} = require('../util.js')
 const UserModel = require('../models/user.model')
+var jwt = require('jsonwebtoken')
 
 
 function createRouter(app){
@@ -75,6 +76,18 @@ app.post('/createAccount', async (req, res) => {
     res.send({user: user, token: token})
   })
   
+  app.get('/verifToken', async (req, res) => {
+    try {
+      const decoded = jwt.verify(req.query.token, 'hfeuazifohz');
+      console.log(decoded)
+      res.send({
+        decoded: decoded
+      })
+    } catch(err) {
+      console.log("mauvaise signature");
+    }
+})
+
 }
 
 

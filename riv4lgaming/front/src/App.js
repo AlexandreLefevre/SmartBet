@@ -1,38 +1,41 @@
-import React,  {Component} from 'react';
+import React,  {Component} from 'react'
 import{
   BrowserRouter as Router,
   Route,
   Switch,
-  Link 
-}  from 'react-router-dom';
-import { Provider } from "react-redux"; 
-import { createStore, compose } from "redux";
+  Link,
+}  from 'react-router-dom'
+import { Provider } from "react-redux"
+import { createStore, compose } from "redux"
 import rootReducer from "./reducers/rootReducer"
-import { CookiesProvider } from 'react-cookie';
+import { CookiesProvider} from 'react-cookie'
+
 
 
 //components
-import Header from './components/headerComponent/header';
-import Footer from './components/footerComponent/footer';
-import Homepage from './components/pages/homePage';
-import LoginPage from './components/pages/loginPage';
-import RegisterPage from './components/pages/registerPage';
-import Profile from './components/pages/profile';
-import Forum from './components/pages/forum';
-import Tournois from './components/pages/tournois';
-import cache from './components/pages/cache';
-import Faq from './components/pages/faq';
-import Termandprivacy from './components/pages/termandprivacy';
-import VerifEmail from './components/pages/verifEmail';
+import Header from './components/headerComponent/header'
+import Footer from './components/footerComponent/footer'
+import Homepage from './components/pages/homePage'
+import LoginPage from './components/pages/loginPage'
+import RegisterPage from './components/pages/registerPage'
+import Profile from './components/pages/profile'
+import Forum from './components/pages/forum'
+import Tournois from './components/pages/tournois'
+import cache from './components/pages/cache'
+import Faq from './components/pages/faq'
+import Termandprivacy from './components/pages/termandprivacy'
+import VerifEmail from './components/pages/verifEmail'
+import createTournament from './components/pages/createTournament'
+import Middleware from './components/middleware/index'
 
 
 //include
-import "./Assets/CSS/default.css";
-import "./Assets/CSS/footer.css";
-import "./Assets/CSS/body.css";
-import "./Assets/CSS/cache.css";
-import "./Assets/CSS/login.css";
-import { initialize, set, pageview } from 'react-ga';
+import "./Assets/CSS/default.css"
+import "./Assets/CSS/footer.css"
+import "./Assets/CSS/body.css"
+import "./Assets/CSS/cache.css"
+import "./Assets/CSS/login.css"
+import { initialize, set, pageview } from 'react-ga'
 
 const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 
 
@@ -51,6 +54,7 @@ const logPageView = () => {
 };
 
 class App extends Component {
+
   render() {
     logPageView();
      return (
@@ -58,7 +62,7 @@ class App extends Component {
        <CookiesProvider>
        <Router >
        <div className="App">
-
+        <Middleware>
          <Header />
          <Route path="/" component={logPageView} />
          <Switch>
@@ -72,12 +76,14 @@ class App extends Component {
          <Route exact path='/faq' component= {Faq} />
          <Route exact path='/tandp' component= {Termandprivacy} />
          <Route exact path='/verifEmail' component= {VerifEmail} />
+         <Route exact path='/createTournament' component= {createTournament} />
          </Switch>
         
 
          <Footer />
-
+         </Middleware>
        </div>
+       
        </Router>
        </CookiesProvider>
        </Provider>

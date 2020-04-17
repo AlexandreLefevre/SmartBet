@@ -16,7 +16,7 @@ class Homepage extends Component {
           <h1 class="riv4l"><span id="black">Riv4l</span><span id="orange">Gaming</span></h1>
           {this.props.user && this.props.user.email !== "" && (
             <h1 style={{color: "red"}}>
-              {this.props.user.email}
+              Bonjour à toi {this.props.user.pseudo} ! 
             </h1>
           )
           }
