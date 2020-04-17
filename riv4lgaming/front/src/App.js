@@ -8,6 +8,7 @@ import{
 import { Provider } from "react-redux"; 
 import { createStore, compose } from "redux";
 import rootReducer from "./reducers/rootReducer"
+import { CookiesProvider } from 'react-cookie';
 
 
 //components
@@ -54,6 +55,7 @@ class App extends Component {
     logPageView();
      return (
        <Provider store ={store}>
+       <CookiesProvider>
        <Router >
        <div className="App">
 
@@ -77,6 +79,7 @@ class App extends Component {
 
        </div>
        </Router>
+       </CookiesProvider>
        </Provider>
      );
   }

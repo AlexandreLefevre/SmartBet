@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
   email: {
@@ -25,6 +26,15 @@ UserSchema.methods.authenticate = async function (password) {
       return value
 }
 
+UserSchema.methods.mapToken = async function () {
+  const value = {
+    _id : this._id, 
+    email: this.email,
+    pseudo: this.pseudo,
+  }
+  const token = jwt.sign(value, 'hfeuazifohz');
+  return token
+}
 
 const user = mongoose.model('user', UserSchema)
 

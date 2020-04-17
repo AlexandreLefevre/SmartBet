@@ -1,6 +1,7 @@
 import React,  {Component} from 'react'
 import axios from 'axios'
 import { connect } from "react-redux"; 
+import { Cookies } from 'react-cookie'
 
 
 class LoginPage extends Component {
@@ -33,6 +34,11 @@ class LoginPage extends Component {
       type: "loginUser", 
       data: response.data.user,
     })       
+    const cookies = new Cookies()
+    cookies.set('token', response.data.token, {
+    path: '/',
+    httpOnly: false,
+})
   })
   .catch(r => {
   if (r.response){
@@ -71,5 +77,6 @@ class LoginPage extends Component {
 const mapDispatchToProps = dispatch => {
       return {dispatch}
 }
+
 
 export default connect (null, mapDispatchToProps) (LoginPage);

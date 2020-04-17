@@ -67,11 +67,12 @@ app.post('/createAccount', async (req, res) => {
     }
     console.log(user)
     const isVerify = await user.authenticate(req.query.password)
+    const token = await user.mapToken()
     if (!isVerify) {
       res.status(404).send("Login failed.")
     }
     console.log(isVerify)
-    res.send({user: user})
+    res.send({user: user, token: token})
   })
   
 }
