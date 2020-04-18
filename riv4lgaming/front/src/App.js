@@ -30,11 +30,12 @@ import Middleware from './components/middleware/index'
 
 
 //include
-import "./Assets/CSS/default.css"
+import 'antd/dist/antd.css'
+/*import "./Assets/CSS/default.css"
 import "./Assets/CSS/footer.css"
 import "./Assets/CSS/body.css"
 import "./Assets/CSS/cache.css"
-import "./Assets/CSS/login.css"
+import "./Assets/CSS/login.css"*/
 import { initialize, set, pageview } from 'react-ga'
 
 const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 

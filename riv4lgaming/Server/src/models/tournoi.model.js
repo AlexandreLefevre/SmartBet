@@ -6,7 +6,8 @@ const TournoiSchema = new mongoose.Schema({
     unique : true,
   },
   participants : Array,
-}, {
+  }, 
+  {
   timestamps: true,
 })
 
