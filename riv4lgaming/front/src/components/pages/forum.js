@@ -3,15 +3,13 @@ import React,  {Component} from 'react';
 class Forum extends Component {
   render() {
      return (
-       <div className="container-fluid">
-
+<body>
         <h1>Forum</h1>
 
         <p>
             Forum
         </p>
-
-       </div>
+</body>
 
      );
   }

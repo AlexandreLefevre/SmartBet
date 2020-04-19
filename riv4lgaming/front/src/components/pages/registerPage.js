@@ -1,5 +1,6 @@
 import React,  {Component} from 'react'
 import axios from 'axios'
+import { Form, Input, Button } from 'antd'
 
 class RegisterPage extends Component {
   state = {
@@ -60,19 +61,20 @@ class RegisterPage extends Component {
       
 <h1 class="titre">Enregistrement</h1>
 
-<form handleSubmit={this.creatAccount}>
+<Form handleSubmit={this.creatAccount}>
   <div class="container">
-    <p>Complétez ce formulaire pour créer un compte.</p>
+    <p>Complétez ce formulaire pour vous créer un compte.</p>
     <p>Pseudo</p>
-    <input type="text" placeholder="pseudo" name="pseudo" required onChange={this.updatPseudo}></input>
+    <Input type="text" placeholder="pseudo" name="pseudo" required onChange={this.updatPseudo}></Input>
     <p>Email</p>
-    <input type="text" placeholder="Entrer Email" name="email" required onChange={this.updatEmail}></input>
+    <Input type="text" placeholder="Entrer Email" name="email" required onChange={this.updatEmail}></Input>
     <p>Mot de passe</p>
-    <input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></input>
+    <Input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></Input>
     <p>Confirmation Mot de passe</p>
-    <input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></input>
+    <Input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></Input>
     <div class="clearfix">
-      <button type="submit" class="signupbtn" onClick={this.creatAccount}>Enregistrement</button>
+      <br />
+      <Button type="submit" class="signupbtn" onClick={this.creatAccount}>Enregistrement</Button>
     </div>
     <p style={{color: "red"}}>{this.state.error}</p>
     <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>
@@ -81,7 +83,7 @@ class RegisterPage extends Component {
 
 
     </div>
-</form>
+</Form>
        </div>
        </body>
      );

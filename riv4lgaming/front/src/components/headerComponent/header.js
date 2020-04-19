@@ -1,33 +1,27 @@
-import React,  {Component} from 'react';
-import{
-  Link 
-}  from 'react-router-dom';
+import React,  {Component} from 'react'
+import{ Link }  from 'react-router-dom'
+import { PageHeader, Menu } from "antd"
 
 class Header extends Component {
   render() {
      return(
 
-      <header>
-        <div>
-        <img src="https://github.com/AlexandreLefevre/SmartBet/blob/master/riv4lgaming/image/riv4lgaming.png?raw=true" alt="logo" class="logo"></img>
-        </div>
-        <nav>
-          <ul>
-            <li className="first">
-              <Link to="/">Accueil</Link>
-            </li>
-            <li>
+      <PageHeader>
+        <Menu mode="horizontal">
+            <Menu.Item>  
+              <Link to="/">Accueil</Link> 
+            </Menu.Item>
+            <Menu.Item>
               <Link to="/forum">Forum</Link>
-            </li>
-            <li>
+            </Menu.Item>
+            <Menu.Item>
               <Link to="/tournois">Tournois</Link>
-            </li>
-            <li className="last">
+            </Menu.Item>
+            <Menu.Item>
               <Link to="/login">Login / Register</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+            </Menu.Item>
+        </Menu>
+      </PageHeader>
  
      );
   }

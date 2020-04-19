@@ -2,6 +2,7 @@ import React,  {Component} from 'react'
 import axios from 'axios'
 import { connect } from "react-redux" 
 import { Cookies } from 'react-cookie'
+import { Form, Input, Button } from 'antd'
 
 
 class LoginPage extends Component {
@@ -55,18 +56,18 @@ class LoginPage extends Component {
        
       <h1 class="titre">Connexion</h1>
  
- <form handleSubmit={this.loginAccount}>
+ <Form handleSubmit={this.loginAccount}>
    <div class="container">
      <p>Connexion</p>
      <p>Email</p>
-     <input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></input>
+     <Input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></Input>
      <p>Mot de passe</p>
-     <input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></input>
+     <Input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></Input>
      <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
      <p style={{color: "red"}}>{this.state.error}</p>
-    <button type="submit" onClick={this.loginAccount}>Connexion</button>
+    <Button  type="primary" htmlType="submit" onClick={this.loginAccount}>Connexion</Button>
      </div>
- </form>
+ </Form>
         </div>
         </body>
 
