@@ -2,7 +2,7 @@ import React,  {Component} from 'react'
 import axios from 'axios'
 import { connect } from "react-redux" 
 import { Cookies } from 'react-cookie'
-import { Form, Input, Button,Typography } from 'antd'
+import { Form, Input, Button,Typography, Col, Row } from 'antd'
 
 const { Title } = Typography;
 
@@ -55,19 +55,24 @@ class LoginPage extends Component {
      return (
       <body >
         <div >  
-        <Title level={1}>Connexion</Title>
-          <Form handleSubmit={this.loginAccount}>
-            <div >
-              <p>Remplissez les champs pour vous connecter.</p>
-              <p>Email</p>
-              <Input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></Input>
-              <p>Mot de passe</p>
-              <Input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></Input>
-              <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
-              <p style={{color: "red"}}>{this.state.error}</p>
-              <Button  type="primary" htmlType="submit" onClick={this.loginAccount}>Connexion</Button>
-              </div>
-          </Form>
+        <Row>
+          <Col flex="100px"></Col>
+          <Col flex="auto">
+            <Title level={1}>Connexion</Title>
+              <Form handleSubmit={this.loginAccount}>
+                <div >
+                  <p>Remplissez les champs pour vous connecter.</p>
+                  <p>Email</p>
+                  <Input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></Input>
+                  <p>Mot de passe</p>
+                  <Input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></Input>
+                  <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
+                  <p style={{color: "red"}}>{this.state.error}</p>
+                  <Button  type="primary" htmlType="submit" onClick={this.loginAccount}>Connexion</Button>
+                  </div>
+              </Form>
+            </Col>
+          </Row> 
         </div>
       </body>
      );

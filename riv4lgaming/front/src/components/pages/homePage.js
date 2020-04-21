@@ -72,28 +72,28 @@ class Homepage extends Component {
       <Col className="gutter-row" span={6}>
         <div style={style}>
           <a href="https://starcraft2.com/fr-fr/">
-              < img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" class="jeu" style={{width:"100%", height:"100%"}}></img>
+              < img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
       </Col>
       <Col className="gutter-row" span={6}>
         <div style={style}>
           <a href="https://play.euw.leagueoflegends.com/fr_FR">
-              <img src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" alt="LoL" class="jeu" style={{width:"100%", height:"100%"}}></img>
+              <img src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" alt="LoL" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
       </Col>
       <Col className="gutter-row" span={6}>
         <div style={style}>
           <a href="https://blog.counter-strike.net/">
-            <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" class="jeu" style={{width:"100%", height:"100%"}}></img>
+            <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
       </Col>
       <Col className="gutter-row" span={6}>
         <div style={style}>
           <a href="https://www.rocketleague.com/">
-            <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" class="jeu" style={{width:"100%", height:"100%"}}></img>
+            <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
       </Col>

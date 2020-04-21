@@ -88,7 +88,7 @@ class CreateTournament extends Component {
                 <Form handleSubmit={this.creatTournament}>
                 <div>
                 <p>Choisissez un nom pour votre tournoi (celui-ci doit être différent des autres tournois existant déjà).</p>
-                    <Input type="textarea" placeholder="Nom de votre tournoi." required onChange={this.updatName} />
+                    <Input type="textarea" placeholder="Nom de votre tournoi." required onChange={this.updatName} /><br /><br />
                 <p>Choisissez un jeu pour votre tournoi.</p>
                     <Radio.Group onChange={this.updatJeu} value={this.state.value}>
                       <Radio value={"SC2"}>Starcraf 2</Radio>
@@ -96,8 +96,7 @@ class CreateTournament extends Component {
                       <Radio value={"CSGO"}>Counter-Strike Global Offensive </Radio>
                       <Radio value={"LOL"}>League of Legends </Radio>
                       <Radio value={"VL"}>Valorant  </Radio>
-                    </Radio.Group>
-                <br />
+                    </Radio.Group><br /><br />
                 <p>Choisissez le nombre de participants ou d'équipes participantes maximum.</p>
                     <Select style={{ width: 200 }} required onChange={this.updatNbrParticipants}>
                         <Option value ={"4"}>4</Option>
@@ -106,11 +105,8 @@ class CreateTournament extends Component {
                         <Option value ={"32"}>32</Option>
                         <Option value ={"64"}>64</Option>
                         <Option value ={"128"}>128</Option>
-                    </Select>
-                <br />
-                <br />
-                <p>Les matchs se déroulent en BO1 par défaut, vous pouvez choisir à partir de quel round ceux-ci passent en BO3, BO5. </p>
-                <br />
+                    </Select><br /><br />
+                <p>Les matchs se déroulent en BO1 par défaut, vous pouvez choisir à partir de quel round ceux-ci passent en BO3, BO5. </p><br />
                 {this.state.jeu === "SC2" && (<div>
                   <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
                     <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
@@ -156,10 +152,10 @@ class CreateTournament extends Component {
                     <Checkbox type="checkbox" value="Champion" onChange={this.updatDivisions}/> Champion 
                     <Checkbox type="checkbox" value="Grand_Champ" onChange={this.updatDivisions}/> Grand Champion 
                   </div>)}
-                <br />
+                <br /><br />
                 <p>Nous vous laissons le choix de définir le map pool dans la description de votre événement ci dessous. </p>
                 <TextArea rows={4} placeholder="Description de votre tournoi." />,
-                <br />
+                <br /><br />
                 <Button type="primary" htmlType="submit" onClick={this.creatTournament}>Créer le tournoi</Button>
                 </div>
                 </Form>

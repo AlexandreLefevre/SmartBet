@@ -3,14 +3,10 @@ import React,  {Component} from 'react';
 class Forum extends Component {
   render() {
      return (
-<body>
-        <h1>Forum</h1>
-
-        <p>
-            Forum
-        </p>
-</body>
-
+      <body>
+        <h1>Communauté</h1>
+          <p>Comment ça marche et comment nous rejoindre ? </p>
+      </body>
      );
   }
 }

@@ -1,6 +1,6 @@
 import React,  {Component} from 'react'
 import axios from 'axios'
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Row, Col } from 'antd'
 
 class RegisterPage extends Component {
   state = {
@@ -55,37 +55,35 @@ class RegisterPage extends Component {
   }
   render() {
      return ( 
-
-<body >
-     <div >
-      
-<h1 >Enregistrement</h1>
-
-<Form handleSubmit={this.creatAccount}>
-  <div >
-    <p>Complétez ce formulaire pour vous créer un compte.</p>
-    <p>Pseudo</p>
-    <Input type="text" placeholder="pseudo" name="pseudo" required onChange={this.updatPseudo}></Input>
-    <p>Email</p>
-    <Input type="text" placeholder="Entrer Email" name="email" required onChange={this.updatEmail}></Input>
-    <p>Mot de passe</p>
-    <Input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></Input>
-    <p>Confirmation Mot de passe</p>
-    <Input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></Input>
-    <div >
-      <br />
-      <Button type="submit" onClick={this.creatAccount}>Enregistrement</Button>
-    </div>
-    <p style={{color: "red"}}>{this.state.error}</p>
-    <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>
-    <p>Connectez vous pour lancer votre session : <a href="/login" >Connexion</a>.</p> 
-    
-
-
-    </div>
-</Form>
-       </div>
-       </body>
+      <body>
+        <div>
+        <Row>
+          <Col flex="100px"></Col>
+          <Col flex="auto">
+          <h1 >Enregistrement</h1>
+            <Form handleSubmit={this.creatAccount}>
+              <div >
+                <p>Complétez ce formulaire pour vous créer un compte.</p>
+                <p>Pseudo</p>
+                <Input type="text" placeholder="pseudo" name="pseudo" required onChange={this.updatPseudo}></Input><br /><br />
+                <p>Email</p>
+                <Input type="text" placeholder="Entrer Email" name="email" required onChange={this.updatEmail}></Input><br /><br />
+                <p>Mot de passe</p>
+                <Input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></Input><br /><br />
+                <p>Confirmation Mot de passe</p>
+                <Input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></Input><br /><br />
+                <div >
+                  <Button type="primary" htmlType="submit" onClick={this.creatAccount}>Enregistrement</Button>
+                </div>
+                <p style={{color: "red"}}>{this.state.error}</p>
+                <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>
+                <p>Connectez vous pour lancer votre session : <a href="/login" >Connexion</a>.</p> 
+              </div>
+            </Form>
+          </Col>
+        </Row>
+        </div>
+      </body>
      );
   }
 }
