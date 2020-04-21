@@ -17,6 +17,8 @@ import Header from './components/headerComponent/header'
 import Footer from './components/footerComponent/footer'
 import Homepage from './components/pages/homePage'
 import LoginPage from './components/pages/loginPage'
+import DonneesJeux from './components/pages/donneesJeux'
+import Histo from './components/pages/histo'
 import RegisterPage from './components/pages/registerPage'
 import Profile from './components/pages/profile'
 import Commu from './components/pages/commu'
@@ -70,6 +72,8 @@ class App extends Component {
          <Route exact path='/' component= {Homepage} />      
          <Route exact path='/login' component= {LoginPage} />
          <Route exact path='/register' component= {RegisterPage} />
+         <Route exact path='/donneesJ' component= {DonneesJeux} />
+         <Route exact path='/histo' component= {Histo} />
          <Route exact path='/profile' component= {Profile} />
          <Route exact path='/commu' component= {Commu} />
          <Route exact path='/tournois' component= {Tournois} />

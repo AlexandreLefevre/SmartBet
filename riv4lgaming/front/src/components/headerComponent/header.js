@@ -28,10 +28,10 @@ class Header extends Component {
                 </>
             }>
                 
-                  <Menu.Item key="setting:1">Profil</Menu.Item>
-                  <Menu.Item key="setting:2">Données Jeux</Menu.Item>
-                  <Menu.Item key="setting:3">Historique</Menu.Item>
-                  <Menu.Item key="setting:1"><LoginOutlined />Déconnexion</Menu.Item>
+                  <Menu.Item key="setting:1"><Link to="/profile">Profil</Link></Menu.Item>
+                  <Menu.Item key="setting:2"><Link to="/donneesJ">Données Jeux</Link></Menu.Item>
+                  <Menu.Item key="setting:3"><Link to="/histo">Historique</Link></Menu.Item>
+                  <Menu.Item key="setting:4"><LoginOutlined />Déconnexion</Menu.Item>
             </SubMenu>
         </Menu>
       </PageHeader>
