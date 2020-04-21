@@ -38,9 +38,10 @@ class Profile extends Component {
                 <Form.Item
                   name="name"
                   label="Nom-Prénom"
+                  disabled="disabled"
                   rules={[{ required: true, message: 'Entrer votre Nom Prenom' }]}
                 >
-                  <Input placeholder="Entrer votre Nom Prenom" />
+                  <Input placeholder="Entrer votre Nom Prenom" disabled="disabled" />
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -49,7 +50,7 @@ class Profile extends Component {
                   label="Pseudo"
                   rules={[{ required: true, message: 'Entrer votre pseudo' }]}
                 >
-                  <Input placeholder="Entrer votre pseudo" />
+                  <Input placeholder="Entrer votre pseudo" disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -60,7 +61,7 @@ class Profile extends Component {
                   label="Nationalité"
                   rules={[{ required: true, message: 'Entrer votre nationalité' }]}
                 >
-                  <Input placeholder="Entrer votre nationalité" />
+                  <Input placeholder="Entrer votre nationalité" disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -69,7 +70,7 @@ class Profile extends Component {
                   label="Ville"
                   rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}
                 >
-                  <Input placeholder="Entrer votre lieu de résidence" />
+                  <Input placeholder="Entrer votre lieu de résidence" disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -80,7 +81,7 @@ class Profile extends Component {
                   label="Téléphone"
                   rules={[{ required: true, message: 'Entrer votre numéro de téléphone' }]}
                 >
-                  <Input placeholder="Entrer votre numero de téléphone" />
+                  <Input placeholder="Entrer votre numero de téléphone" disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -91,7 +92,7 @@ class Profile extends Component {
                 >
                   <DatePicker
                     style={{ width: '100%' }}
-                    
+                    disabled="disabled"
                   />
                 </Form.Item>
               </Col>
@@ -108,7 +109,7 @@ class Profile extends Component {
                     },
                   ]}
                 >
-                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." />
+                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
