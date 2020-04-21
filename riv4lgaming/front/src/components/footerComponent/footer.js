@@ -12,7 +12,7 @@ class Footer extends Component {
             <Col span={8}> 
                <h2>Riv<a href='/cache'>4</a>l<span>Gaming</span></h2>
                <Link to="/">Acceuil </Link>         
-               <Link to="/forum">Forum  </Link>        
+               <Link to="/commu">Communauté  </Link>        
                <Link to="/tournois">Tournois </Link>           
                <Link to="/faq">Faq </Link>           
                <p>Riv4lGaming © 2020</p> </Col>
