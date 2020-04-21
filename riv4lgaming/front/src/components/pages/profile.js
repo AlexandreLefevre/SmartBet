@@ -1,9 +1,18 @@
 import React,  {Component} from 'react'
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker } from 'antd';
+import { Drawer, Form, Button, Col, Row, Input, Upload, Select, DatePicker } from 'antd';
+import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
+
+const normFile = e => {
+  console.log('Upload event:', e);
+  if (Array.isArray(e)) {
+    return e;
+  }
+  return e && e.fileList;
+};
 
 class Profile extends Component {
   state = { visible: false };
@@ -219,6 +228,19 @@ class Profile extends Component {
                 >
                   <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." />
                 </Form.Item>
+                <Form.Item
+        name="avatar"
+        label="Avatar"
+        valuePropName="fileList"
+        getValueFromEvent={normFile}
+        extra="insérer une image de profil"
+      >
+        <Upload name="logo" action="/upload.do" listType="picture">
+          <Button>
+            <UploadOutlined /> Click to upload
+          </Button>
+        </Upload>
+      </Form.Item>
               </Col>
             </Row>
           </Form>
