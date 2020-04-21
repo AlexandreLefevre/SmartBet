@@ -2,8 +2,9 @@ import React,  {Component} from 'react'
 import axios from 'axios'
 import { connect } from "react-redux" 
 import { Cookies } from 'react-cookie'
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button,Typography } from 'antd'
 
+const { Title } = Typography;
 
 class LoginPage extends Component {
   state = {
@@ -49,28 +50,26 @@ class LoginPage extends Component {
     }
   })
   }
+  
   render() {
      return (
-      <body class="loginbody">
-      <div className="container-fluid">
-       
-      <h1 class="titre">Connexion</h1>
- 
- <Form handleSubmit={this.loginAccount}>
-   <div class="container">
-     <p>Connexion</p>
-     <p>Email</p>
-     <Input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></Input>
-     <p>Mot de passe</p>
-     <Input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></Input>
-     <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
-     <p style={{color: "red"}}>{this.state.error}</p>
-    <Button  type="primary" htmlType="submit" onClick={this.loginAccount}>Connexion</Button>
-     </div>
- </Form>
+      <body >
+        <div >  
+        <Title level={1}>Connexion</Title>
+          <Form handleSubmit={this.loginAccount}>
+            <div >
+              <p>Remplissez les champs pour vous connecter.</p>
+              <p>Email</p>
+              <Input type="text" placeholder="Email" name="email" required onChange={this.updatEmail}></Input>
+              <p>Mot de passe</p>
+              <Input type="password" placeholder="Entrer mot de passe" name="psw" required onChange={this.updatPassword}></Input>
+              <p>Enregistrer un nouveau membre :  <a href="/register" >Enregistrement</a>.</p>
+              <p style={{color: "red"}}>{this.state.error}</p>
+              <Button  type="primary" htmlType="submit" onClick={this.loginAccount}>Connexion</Button>
+              </div>
+          </Form>
         </div>
-        </body>
-
+      </body>
      );
   }
 }

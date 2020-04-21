@@ -1,9 +1,11 @@
 import React,  {Component} from 'react'
 import { connect } from "react-redux"
 import axios from 'axios'
-import { Radio, Checkbox, Select, Button, Input} from 'antd'
+import { Radio, Checkbox, Select, Button, Input, Col, Row} from 'antd'
+import Form from 'antd/lib/form/Form';
 
-
+const { Option} = Select;
+const { TextArea } = Input;
 const mapStateToProps = state => {
     return {
       user: state.user
@@ -19,7 +21,6 @@ class CreateTournament extends Component {
         divisions :"",
       }
       
-
       onChange = e => {
         console.log('radio checked', e.target.value);
         this.setState({
@@ -28,18 +29,18 @@ class CreateTournament extends Component {
       };
 
       updatName = (e) => {
-        //console.log(e.target.value);
+        console.log(e.target.value);
         this.setState({nom: e.target.value});
       }
 
       updatJeu = (e) => {
-        //console.log(e.target.value);
+        console.log(e.target.value);
         this.setState({jeu: e.target.value});
       }
     
       updatNbrParticipants = (e) => {
-        //console.log(e.target.value);
-        this.setState({nbr_participants: e.target.value});
+        console.log(e);
+        this.setState({nbr_participants: e});
       }
     
       updatNbrMatchs = (e) => {
@@ -48,6 +49,7 @@ class CreateTournament extends Component {
       }
     
       updatDivisions = (e) => {
+        console.log(e.target.value);
         this.setState({divisions: e.target.value})
       }
     
@@ -77,15 +79,16 @@ class CreateTournament extends Component {
           }
         })
       }
+
     render(){
         return (
-            <body>
-                <div className="container-fluid">
-
-                <form handleSubmit={this.creatTournament}>
-                <div class="container">
+              <Row>
+                <Col flex="100px"></Col>
+                <Col flex="auto">
+                <Form handleSubmit={this.creatTournament}>
+                <div>
                 <p>Choisissez un nom pour votre tournoi (celui-ci doit être différent des autres tournois existant déjà).</p>
-                    <Input type="textarea" placeholder="Nom de votre tournoi." name="nomTournoi" required onChange={this.updatName} />
+                    <Input type="textarea" placeholder="Nom de votre tournoi." required onChange={this.updatName} />
                 <p>Choisissez un jeu pour votre tournoi.</p>
                     <Radio.Group onChange={this.updatJeu} value={this.state.value}>
                       <Radio value={"SC2"}>Starcraf 2</Radio>
@@ -96,72 +99,72 @@ class CreateTournament extends Component {
                     </Radio.Group>
                 <br />
                 <p>Choisissez le nombre de participants ou d'équipes participantes maximum.</p>
-                    <Select style={{width:"100px"}} name="participants" id="nbr_participants" require onChange={this.updatNbrParticipants}>
-                        <Select.Option value ={"4"}>4</Select.Option>
-                        <Select.Option value = "8">8</Select.Option>
-                        <Select.Option value = "16">16</Select.Option>
-                        <Select.Option value = "32">32</Select.Option>
-                        <Select.Option value = "64">64</Select.Option>
-                        <Select.Option value = "128">128</Select.Option>
+                    <Select style={{ width: 200 }} required onChange={this.updatNbrParticipants}>
+                        <Option value ={"4"}>4</Option>
+                        <Option value ={"8"}>8</Option>
+                        <Option value ={"16"}>16</Option>
+                        <Option value ={"32"}>32</Option>
+                        <Option value ={"64"}>64</Option>
+                        <Option value ={"128"}>128</Option>
                     </Select>
                 <br />
                 <br />
                 <p>Les matchs se déroulent en BO1 par défaut, vous pouvez choisir à partir de quel round ceux-ci passent en BO3, BO5. </p>
-
                 <br />
                 {this.state.jeu === "SC2" && (<div>
                   <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
-                    <Checkbox type="checkbox" name="level" value="Bronze" onChange={this.updatDivisions}/> Bronze 
-                    <Checkbox type="checkbox" name="level" value="Argent" onChange={this.updatDivisions}/> Argent 
-                    <Checkbox type="checkbox" name="level" value="Gold" onChange={this.updatDivisions}/> Or 
-                    <Checkbox type="checkbox" name="level" value="Platine" onChange={this.updatDivisions}/> Platine 
-                    <Checkbox type="checkbox" name="level" value="Diamand" onChange={this.updatDivisions}/> Diamand 
-                    <Checkbox type="checkbox" name="level" value="Master" onChange={this.updatDivisions}/> Maître 
-                    <Checkbox type="checkbox" name="level" value="GM" onChange={this.updatDivisions}/> Grand maître 
+                    <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
+                    <Checkbox type="checkbox" value="Argent" onChange={this.updatDivisions}/> Argent 
+                    <Checkbox type="checkbox" value="Gold" onChange={this.updatDivisions}/> Or 
+                    <Checkbox type="checkbox" value="Platine" onChange={this.updatDivisions}/> Platine 
+                    <Checkbox type="checkbox" value="Diamand" onChange={this.updatDivisions}/> Diamand 
+                    <Checkbox type="checkbox" value="Master" onChange={this.updatDivisions}/> Maître 
+                    <Checkbox type="checkbox" value="GM" onChange={this.updatDivisions}/> Grand maître 
                 </div>)}
                 <br />
                 {this.state.jeu === "LOL" && (<div>
                 <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
-                    <Checkbox type="checkbox" name="level" value="Bronze" onChange={this.updatDivisions}/> Bronze 
-                    <Checkbox type="checkbox" name="level" value="Argent" onChange={this.updatDivisions}/> Argent 
-                    <Checkbox type="checkbox" name="level" value="Gold" onChange={this.updatDivisions}/> Or 
-                    <Checkbox type="checkbox" name="level" value="Platine" onChange={this.updatDivisions}/> Platine 
-                    <Checkbox type="checkbox" name="level" value="Diamand" onChange={this.updatDivisions}/> Diamand 
-                    <Checkbox type="checkbox" name="level" value="Master" onChange={this.updatDivisions}/> Maître 
-                    <Checkbox type="checkbox" name="level" value="GM" onChange={this.updatDivisions}/> Grand maître 
-                    <Checkbox type="checkbox" name="level" value="Challenger" onChange={this.updatDivisions}/> Challenger 
+                    <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
+                    <Checkbox type="checkbox" value="Argent" onChange={this.updatDivisions}/> Argent 
+                    <Checkbox type="checkbox" value="Gold" onChange={this.updatDivisions}/> Or 
+                    <Checkbox type="checkbox" value="Platine" onChange={this.updatDivisions}/> Platine 
+                    <Checkbox type="checkbox" value="Diamand" onChange={this.updatDivisions}/> Diamand 
+                    <Checkbox type="checkbox" value="Master" onChange={this.updatDivisions}/> Maître 
+                    <Checkbox type="checkbox" value="GM" onChange={this.updatDivisions}/> Grand maître 
+                    <Checkbox type="checkbox" value="Challenger" onChange={this.updatDivisions}/> Challenger 
                   </div>)}
                 <br />
                 {this.state.jeu === "CSGO" && (<div>
                 <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
-                    <Checkbox type="checkbox" name="level" value="Argent" onChange={this.updatDivisions}/> Argent 
-                    <Checkbox type="checkbox" name="level" value="Nova" onChange={this.updatDivisions}/> Nova 
-                    <Checkbox type="checkbox" name="level" value="AK" onChange={this.updatDivisions}/> AK 
-                    <Checkbox type="checkbox" name="level" value="DL_AK" onChange={this.updatDivisions}/> Double AK 
-                    <Checkbox type="checkbox" name="level" value="Master" onChange={this.updatDivisions}/> Master Guardian 
-                    <Checkbox type="checkbox" name="level" value="Eagle" onChange={this.updatDivisions}/> Eagle 
-                    <Checkbox type="checkbox" name="level" value="Supreme" onChange={this.updatDivisions}/> Suprême 
-                    <Checkbox type="checkbox" name="level" value="Global" onChange={this.updatDivisions}/> Global 
+                    <Checkbox type="checkbox" value="Argent" onChange={this.updatDivisions}/> Argent 
+                    <Checkbox type="checkbox" value="Nova" onChange={this.updatDivisions}/> Nova 
+                    <Checkbox type="checkbox" value="AK" onChange={this.updatDivisions}/> AK 
+                    <Checkbox type="checkbox" value="DL_AK" onChange={this.updatDivisions}/> Double AK 
+                    <Checkbox type="checkbox" value="Master" onChange={this.updatDivisions}/> Master Guardian 
+                    <Checkbox type="checkbox" value="Eagle" onChange={this.updatDivisions}/> Eagle 
+                    <Checkbox type="checkbox" value="Supreme" onChange={this.updatDivisions}/> Suprême 
+                    <Checkbox type="checkbox" value="Global" onChange={this.updatDivisions}/> Global 
                   </div>)}
                 <br />
                 {this.state.jeu === "RL" && (<div>
                 <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
-                    <Checkbox type="checkbox" name="level" value="Bronze" onChange={this.updatDivisions}/> Bronze 
-                    <Checkbox type="checkbox" name="level" value="Argent" onChange={this.updatDivisions}/> Argent 
-                    <Checkbox type="checkbox" name="level" value="Gold" onChange={this.updatDivisions}/> Or 
-                    <Checkbox type="checkbox" name="level" value="Platine" onChange={this.updatDivisions}/> Platine 
-                    <Checkbox type="checkbox" name="level" value="Diamand" onChange={this.updatDivisions}/> Diamand 
-                    <Checkbox type="checkbox" name="level" value="Champion" onChange={this.updatDivisions}/> Champion 
-                    <Checkbox type="checkbox" name="level" value="Grand_Champ" onChange={this.updatDivisions}/> Grand Champion 
+                    <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
+                    <Checkbox type="checkbox" value="Argent" onChange={this.updatDivisions}/> Argent 
+                    <Checkbox type="checkbox" value="Gold" onChange={this.updatDivisions}/> Or 
+                    <Checkbox type="checkbox" value="Platine" onChange={this.updatDivisions}/> Platine 
+                    <Checkbox type="checkbox" value="Diamand" onChange={this.updatDivisions}/> Diamand 
+                    <Checkbox type="checkbox" value="Champion" onChange={this.updatDivisions}/> Champion 
+                    <Checkbox type="checkbox" value="Grand_Champ" onChange={this.updatDivisions}/> Grand Champion 
                   </div>)}
                 <br />
                 <p>Nous vous laissons le choix de définir le map pool dans la description de votre événement ci dessous. </p>
+                <TextArea rows={4} placeholder="Description de votre tournoi." />,
                 <br />
                 <Button type="primary" htmlType="submit" onClick={this.creatTournament}>Créer le tournoi</Button>
                 </div>
-                </form>
-                </div>
-            </body>
+                </Form>
+                </Col>
+                </Row>
         )
     }
 }

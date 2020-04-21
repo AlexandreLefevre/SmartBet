@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
 
 const TournoiSchema = new mongoose.Schema({
-    nameTournament : {
+    name : {
     type : String, 
     unique : true,
   },
-  participants : Array,
+  auteur: {
+    type: mongoose.Schema.ObjectId, ref: 'user'
+  },
+  participants : [{type: mongoose.Schema.ObjectId, ref: 'user'}],
   }, 
   {
   timestamps: true,

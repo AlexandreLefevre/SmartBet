@@ -16,7 +16,8 @@ class Homepage extends Component {
     console.log(this.props.user);
      return (
        <body>
-         <Title level={1} class="riv4l">Riv4lGaming</Title>
+         <div style={{textAlign: "center"}}>
+         <Title level={1} >Riv4lGaming</Title>
           {this.props.user && this.props.user.email !== "" && (
             <Title level={3} style={{color: "red"}}>
               Bonjour à toi {this.props.user.pseudo} ! 
@@ -24,12 +25,13 @@ class Homepage extends Component {
             )
           }
           <Title level={2}>
-              <p class="niveau1">Bienvenue sur Riv4lGaming ! </p>
+              <p>Bienvenue sur Riv4lGaming ! </p>
           </Title >
-        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-          <Col style={style} span={8}>
+          </div>
+        <Row>
+          <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
             <Title level={2}>
-              <p class="niveau1">Qu'est ce que Riv4lGaming ? </p>
+              <p>Qu'est ce que Riv4lGaming ? </p>
             </Title>
             <p>Riv4lGaming est un site vous permettant de trouver des partenaires avec qui jouer sur vos différents jeu en ligne. 
             Mais ce n'est pas tout, Riv4lGaming vous propose aussi de participer à des tounois sur différents jeux. Ces tournois sont créés soit
@@ -37,9 +39,9 @@ class Homepage extends Component {
             Cela vous tente ? Alors n'hésitez plus foncez !
             </p>
           </Col>
-          <Col style={style} span={8}>
+          <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
             <Title level={2}>
-              <p class="niveau1">Forum</p>
+              <p>Forum</p>
             </Title >
               <p>Comment cette partie du site fonctionne ?<br />
               C'est très simple, vous créez votre annonce en indiquant ce que vous recherchez par exemple : <br />
@@ -48,9 +50,9 @@ class Homepage extends Component {
               et pour finir le titre de votre annonce résumant pourquoi vous la créée.
               </p>
           </Col>
-          <Col style={style} span={8}> 
+          <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
             <Title level={2}>
-              <p class="niveau1">Tournoi</p>
+              <p>Tournoi</p>
             </Title >
               <p>Comment cette partie du site fonctionne ?<br/>
               Vous retrouverez sur cette partie du site différents tournois.<br />

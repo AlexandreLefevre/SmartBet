@@ -56,13 +56,13 @@ class RegisterPage extends Component {
   render() {
      return ( 
 
-<body class="loginbody">
-     <div className="container-fluid">
+<body >
+     <div >
       
-<h1 class="titre">Enregistrement</h1>
+<h1 >Enregistrement</h1>
 
 <Form handleSubmit={this.creatAccount}>
-  <div class="container">
+  <div >
     <p>Complétez ce formulaire pour vous créer un compte.</p>
     <p>Pseudo</p>
     <Input type="text" placeholder="pseudo" name="pseudo" required onChange={this.updatPseudo}></Input>
@@ -72,9 +72,9 @@ class RegisterPage extends Component {
     <Input type="password" placeholder="Entrer votre mot de passe" name="psw" required onChange={this.updatPassword}></Input>
     <p>Confirmation Mot de passe</p>
     <Input type="password" placeholder="Répéter votre mot de passe" name="psw-repeat" required onChange={this.updatPasswordVerify}></Input>
-    <div class="clearfix">
+    <div >
       <br />
-      <Button type="submit" class="signupbtn" onClick={this.creatAccount}>Enregistrement</Button>
+      <Button type="submit" onClick={this.creatAccount}>Enregistrement</Button>
     </div>
     <p style={{color: "red"}}>{this.state.error}</p>
     <p>En créant un compte vous acceptez nos <a href="/tandp" >Terms & Privacy</a>.</p>

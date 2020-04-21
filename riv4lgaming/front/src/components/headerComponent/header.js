@@ -5,14 +5,13 @@ import { PageHeader, Menu } from "antd"
 class Header extends Component {
   render() {
      return(
-
       <PageHeader>
         <Menu mode="horizontal">
             <Menu.Item>  
               <Link to="/">Accueil</Link> 
             </Menu.Item>
             <Menu.Item>
-              <Link to="/forum">Forum</Link>
+              <Link to="/commu">Communauté</Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/tournois">Tournois</Link>

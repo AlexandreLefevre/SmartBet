@@ -19,7 +19,7 @@ import Homepage from './components/pages/homePage'
 import LoginPage from './components/pages/loginPage'
 import RegisterPage from './components/pages/registerPage'
 import Profile from './components/pages/profile'
-import Forum from './components/pages/forum'
+import Commu from './components/pages/commu'
 import Tournois from './components/pages/tournois'
 import cache from './components/pages/cache'
 import Faq from './components/pages/faq'
@@ -71,7 +71,7 @@ class App extends Component {
          <Route exact path='/login' component= {LoginPage} />
          <Route exact path='/register' component= {RegisterPage} />
          <Route exact path='/profile' component= {Profile} />
-         <Route exact path='/forum' component= {Forum} />
+         <Route exact path='/commu' component= {Commu} />
          <Route exact path='/tournois' component= {Tournois} />
          <Route exact path='/cache' component= {cache} />
          <Route exact path='/faq' component= {Faq} />
