@@ -3,13 +3,12 @@ const UserModel = require('../models/user.model')
 const TournoiModel = require('../models/tournoi.model')
 
 function createTournoiRoute(app){
-
-app.delete('/creatTournament', async (req, res) => {
+app.delete('/createTournament', async (req, res) => {
     await TournoiModel.delete({name: req.query.name})
     res.send('tournoi détruit')
 })
 
-app.put('/creatTournament', async (req, res) => { 
+app.put('/createTournament', async (req, res) => { 
     const tournoi = await TournoiModel.findOneAndUpdate({name: req.query.name}, 
         {$set: {  //mots clés mongo
             ...req.query,
@@ -19,34 +18,23 @@ app.put('/creatTournament', async (req, res) => {
         res.send({tournoi: tournoi})
 })
 
-app.post('/creatTournament', async (req, res) => {
+app.post('/createTournament', async (req, res) => {
     console.log(req.body);
     const myTournoi = new TournoiModel({
       name: req.body.name,
       jeu: req.body.jeu,
-      nbr_participants: req.body.nbr_participants,
+      nbr_participants_max: req.body.nbr_participants_max,
       divisions: req.body.divisions,
     })
     await myTournoi.save()
-    await envoiEmail(req.body.email) //confirmation
     res.send('Tournoi created') //requête fini on envoie rien après
-    /*catch(err) {console.log(err)}*/
+    //catch(err) {console.log(err)}
 });
 
-    app.get('/creatTournament', async (req, res) => {
+    app.get('/createTournament', async (req, res) => {
         const tournoi = await TournoiModel.findOne({name: req.query.name})
         console.log('tournoi =>',tournoi);
         res.send({tournoi: tournoi})
-  })
-  app.put('/checkEmail', async (req, res) => {
-      const user = await UserModel.findOne({email: req.query.email, tokenEmail: req.query.token})
-      if (user) {//si user existe
-          await UserModel.findOneAndUpdate({email: req.query.email},
-            {$set: {
-              isEmailVerify: true,
-          }})
-      }
-      res.send('ok')
   })
   /*app.get('/loginAccount', async (req, res) => {
     console.log(req.query)
@@ -80,6 +68,5 @@ app.post('/creatTournament', async (req, res) => {
 })*/
 
 }
-
 
 module.exports = createTournoiRoute;

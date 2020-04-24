@@ -5,6 +5,9 @@ const TournoiSchema = new mongoose.Schema({
     type : String, 
     unique : true,
   },
+  nbr_participants_max : Number,
+  jeu : String, 
+  divisions : Array, 
   auteur: {
     type: mongoose.Schema.ObjectId, ref: 'user'
   },

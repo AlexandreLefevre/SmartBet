@@ -14,11 +14,11 @@ const mapStateToProps = state => {
 
 class CreateTournament extends Component {
     state = {
-        nom: "",
+        name: "",
         jeu : "",
-        nbr_participants : "",
+        nbr_participants_max : "",
         nbr_matchs : "",
-        divisions :"",
+        divisions :[],
       }
       
       onChange = e => {
@@ -30,7 +30,7 @@ class CreateTournament extends Component {
 
       updatName = (e) => {
         console.log(e.target.value);
-        this.setState({nom: e.target.value});
+        this.setState({name: e.target.value});
       }
 
       updatJeu = (e) => {
@@ -40,7 +40,7 @@ class CreateTournament extends Component {
     
       updatNbrParticipants = (e) => {
         console.log(e);
-        this.setState({nbr_participants: e});
+        this.setState({nbr_participants_max: e});
       }
     
       updatNbrMatchs = (e) => {
@@ -50,19 +50,19 @@ class CreateTournament extends Component {
     
       updatDivisions = (e) => {
         console.log(e.target.value);
-        this.setState({divisions: e.target.value})
+        this.setState({divisions: [...this.state.divisions, e.target.value]})
       }
     
       creatTournament = (e) => {
         e.preventDefault()
-        console.log("création de tournoi", this.state.nom, this.state.jeu, this.state.nbr_participants, this.state.nbr_matchs, this.state.divisions);
+        console.log("création de tournoi", this.state.name, this.state.jeu, this.state.nbr_participants_max, this.state.nbr_matchs, this.state.divisions);
         axios({
           method: 'post',
-          url: 'http://localhost:4000/creatTournament',
+          url: 'http://localhost:4000/createTournament',
           data: {
-            nom: this.state.nom,
+            name: this.state.name,
             jeu: this.state.jeu,
-            nbr_participants: this.state.nbr_participants,
+            nbr_participants_max: this.state.nbr_participants_max,
             nbr_matchs: this.state.nbr_matchs,
             divisions: this.state.divisions,
           }
@@ -81,16 +81,17 @@ class CreateTournament extends Component {
       }
 
     render(){
+      console.log(this.state.divisions);
         return (
-              <Row>
-                <Col flex="100px"></Col>
-                <Col flex="auto">
-                <Form handleSubmit={this.creatTournament}>
+          <Row>
+            <Col flex="100px"></Col>
+            <Col flex="auto">
+              <Form handleSubmit={this.creatTournament}>
                 <div>
                 <p>Choisissez un nom pour votre tournoi (celui-ci doit être différent des autres tournois existant déjà).</p>
                     <Input type="textarea" placeholder="Nom de votre tournoi." required onChange={this.updatName} /><br /><br />
                 <p>Choisissez un jeu pour votre tournoi.</p>
-                    <Radio.Group onChange={this.updatJeu} value={this.state.value}>
+                    <Radio.Group onChange={this.updatJeu} value={this.state.jeu}>
                       <Radio value={"SC2"}>Starcraf 2</Radio>
                       <Radio value={"RL"}>Rocket League</Radio>
                       <Radio value={"CSGO"}>Counter-Strike Global Offensive </Radio>
@@ -157,10 +158,10 @@ class CreateTournament extends Component {
                 <TextArea rows={4} placeholder="Description de votre tournoi." />,
                 <br /><br />
                 <Button type="primary" htmlType="submit" onClick={this.creatTournament}>Créer le tournoi</Button>
-                </div>
-                </Form>
-                </Col>
-                </Row>
+              </div>
+              </Form>
+            </Col>
+          </Row>
         )
     }
 }

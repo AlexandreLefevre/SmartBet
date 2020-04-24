@@ -1,10 +1,8 @@
 import React,  {Component} from 'react'
-import { Drawer, Form, Button, Col, Row, Input, Upload, Select, DatePicker } from 'antd';
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
+import { Drawer, Form, Button, Col, Row, Input, Upload, DatePicker } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-
-const { Option } = Select;
 
 const normFile = e => {
   console.log('Upload event:', e);
@@ -31,9 +29,6 @@ class Profile extends Component {
 
   render() {
     return (
-
-      
-      
       <body>
         <Row>
           <Col flex="100px"></Col>
@@ -46,20 +41,17 @@ class Profile extends Component {
               <Col span={12}>
                 <Form.Item
                   name="name"
-                  label="Nom-Prénom"
-                  disabled="disabled"
-                  rules={[{ required: true, message: 'Entrer votre Nom Prenom' }]}
-                >
-                  <Input placeholder="Entrer votre Nom Prenom" disabled="disabled" />
+                  label="Nom-Prénom"             
+                  rules={[{ required: true, message: 'Entrer votre Nom Prenom' }]}>
+                  <Input placeholder="Entrer votre Nom Prenom" />
                 </Form.Item>
               </Col>
               <Col span={12}>
               <Form.Item
                   name="username"
                   label="Pseudo"
-                  rules={[{ required: true, message: 'Entrer votre pseudo' }]}
-                >
-                  <Input placeholder="Entrer votre pseudo" disabled="disabled"/>
+                  rules={[{ required: true, message: 'Entrer votre pseudo' }]}>
+                  <Input placeholder="Entrer votre pseudo" />
                 </Form.Item>
               </Col>
             </Row>
@@ -68,18 +60,16 @@ class Profile extends Component {
                 <Form.Item
                   name="nationalite"
                   label="Nationalité"
-                  rules={[{ required: true, message: 'Entrer votre nationalité' }]}
-                >
-                  <Input placeholder="Entrer votre nationalité" disabled="disabled"/>
+                  rules={[{ required: true, message: 'Entrer votre nationalité' }]}>
+                  <Input placeholder="Entrer votre nationalité" />
                 </Form.Item>
               </Col>
               <Col span={12}>
                 <Form.Item
                   name="ville"
                   label="Ville"
-                  rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}
-                >
-                  <Input placeholder="Entrer votre lieu de résidence" disabled="disabled"/>
+                  rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}>
+                  <Input placeholder="Entrer votre lieu de résidence" />
                 </Form.Item>
               </Col>
             </Row>
@@ -88,21 +78,16 @@ class Profile extends Component {
                 <Form.Item
                   name="tel"
                   label="Téléphone"
-                  rules={[{ required: true, message: 'Entrer votre numéro de téléphone' }]}
-                >
-                  <Input placeholder="Entrer votre numero de téléphone" disabled="disabled"/>
+                  rules={[{ required: true, message: 'Entrer votre numéro de téléphone' }]}>
+                  <Input placeholder="Entrer votre numero de téléphone" />
                 </Form.Item>
               </Col>
               <Col span={12}>
                 <Form.Item
                   name="dateNaissance"
                   label="Date de naissance"
-                  rules={[{ required: true, message: 'Entrer votre date de naissance' }]}
-                >
-                  <DatePicker
-                    style={{ width: '100%' }}
-                    disabled="disabled"
-                  />
+                  rules={[{ required: true, message: 'Entrer votre date de naissance' }]}>
+                  <DatePicker style={{ width: '100%' }}/>
                 </Form.Item>
               </Col>
             </Row>
@@ -116,9 +101,8 @@ class Profile extends Component {
                       required: true,
                       message: 'Entrer une description du style de joueur que vous êtes',
                     },
-                  ]}
-                >
-                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." disabled="disabled"/>
+                  ]}>
+                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." />
                 </Form.Item>
               </Col>
             </Row>
