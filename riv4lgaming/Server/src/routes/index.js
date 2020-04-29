@@ -6,7 +6,7 @@ function createRouter(app){
   try{
     createUserRoute(app)
     createTournoiRoute(app)
-    //updateUserRoute(app)
+    updateUserRoute(app)
   }
   catch(err){
     console.log(err)

@@ -119,10 +119,7 @@ render () {
                 onClick={this.onClose}
                 style={{ marginRight: 8 }}
               >
-                Cancel
-              </Button>
-              <Button onClick={this.onClose} type="primary">
-                Submit
+              Fermer
               </Button>
             </div>
           }
@@ -205,19 +202,20 @@ render () {
                   <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." onChange={this.updatDescription} />
                 </Form.Item>
                 <Form.Item
-        name="avatar"
-        label="Avatar"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
-        extra="insérer une image de profil"
-      >
-        <Upload name="logo" action="/upload.do" listType="picture">
-          <Button>
-            <UploadOutlined /> Click to upload
-          </Button>
-        </Upload>
-                    </Form.Item>
-                </Col>
+                  name="avatar"
+                  label="Avatar"
+                  valuePropName="fileList"
+                  getValueFromEvent={normFile}
+                  extra="insérer une image de profil"
+                >
+                  <Upload name="logo" action="/upload.do" listType="picture">
+                    <Button>
+                      <UploadOutlined /> Click to upload
+                    </Button>
+                  </Upload>
+                </Form.Item>
+                <Button type="primary" htmlType="submit" onClick={this.updateUser}>Mettre à jour le profil.</Button>
+              </Col>
             </Row>
         </Form>
     </Drawer>

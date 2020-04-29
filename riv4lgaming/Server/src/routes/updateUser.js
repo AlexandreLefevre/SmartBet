@@ -1,8 +1,4 @@
-const bcrypt = require('bcrypt')
-const uuid = require('uuid/v1')
 const UserModel = require('../models/user.model')
-var jwt = require('jsonwebtoken')
-
 
 function updateUserRoute(app){
 
