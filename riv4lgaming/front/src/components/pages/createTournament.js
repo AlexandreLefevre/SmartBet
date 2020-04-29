@@ -29,17 +29,17 @@ class CreateTournament extends Component {
       };
 
       updatName = (e) => {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         this.setState({name: e.target.value});
       }
 
       updatJeu = (e) => {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         this.setState({jeu: e.target.value});
       }
     
       updatNbrParticipants = (e) => {
-        console.log(e);
+        //console.log(e);
         this.setState({nbr_participants_max: e});
       }
     
@@ -49,13 +49,18 @@ class CreateTournament extends Component {
       }
     
       updatDivisions = (e) => {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         this.setState({divisions: [...this.state.divisions, e.target.value]})
       }
     
+      updatDescription = (e) => {
+        //console.log(e.target.value);
+        this.setState({description: e.target.value});
+      }
+
       creatTournament = (e) => {
         e.preventDefault()
-        console.log("création de tournoi", this.state.name, this.state.jeu, this.state.nbr_participants_max, this.state.nbr_matchs, this.state.divisions);
+        console.log("création de tournoi", this.state.name, this.state.jeu, this.state.nbr_participants_max, this.state.nbr_matchs, this.state.divisions, this.state.description);
         axios({
           method: 'post',
           url: 'http://localhost:4000/createTournament',
@@ -65,6 +70,7 @@ class CreateTournament extends Component {
             nbr_participants_max: this.state.nbr_participants_max,
             nbr_matchs: this.state.nbr_matchs,
             divisions: this.state.divisions,
+            description: this.state.description,
           }
         })
       .then((response) => {
@@ -155,7 +161,7 @@ class CreateTournament extends Component {
                   </div>)}
                 <br /><br />
                 <p>Nous vous laissons le choix de définir le map pool dans la description de votre événement ci dessous. </p>
-                <TextArea rows={4} placeholder="Description de votre tournoi." />,
+                <TextArea rows={4} placeholder="Description de votre tournoi." onChange={this.updatDescription}/>,
                 <br /><br />
                 <Button type="primary" htmlType="submit" onClick={this.creatTournament}>Créer le tournoi</Button>
               </div>

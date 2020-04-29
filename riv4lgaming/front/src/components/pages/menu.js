@@ -6,7 +6,6 @@ import {
   PieChartOutlined,
   DesktopOutlined,
   ContainerOutlined,
-  MailOutlined,
 } from '@ant-design/icons';
 
 const { SubMenu } = Menu;

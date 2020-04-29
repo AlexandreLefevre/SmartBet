@@ -1,18 +1,19 @@
 import React,  {Component} from 'react'
-import { Drawer, Form, Button, Col, Row, Input, Upload, DatePicker } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { Form, Button, Col, Row, Input, DatePicker } from 'antd';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { connect } from "react-redux"
+import UpdateProfile from "./updateProfile";
 
-const normFile = e => {
-  console.log('Upload event:', e);
-  if (Array.isArray(e)) {
-    return e;
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
   }
-  return e && e.fileList;
-};
+}
 
 class Profile extends Component {
+  
   state = { visible: false };
 
   showDrawer = () => {
@@ -28,6 +29,7 @@ class Profile extends Component {
   };
 
   render() {
+    console.log("c'est props", this.props)
     return (
       <body>
         <Row>
@@ -36,22 +38,31 @@ class Profile extends Component {
         <div>
            <Avatar size={64} icon={<UserOutlined />} />
         </div>
-        <Form layout="vertical" hideRequiredMark>
+        {this.props.user && this.props.user.email !== "" && (
+            <Form layout="vertical" hideRequiredMark  initialValues={{ 
+              nom: this.props.user.nom,
+              prenom: this.props.user.prenom,
+              pseudo: this.props.user.pseudo,
+              nationalite: this.props.user.nationalite,
+              ville: this.props.user.ville,
+              dateNaissance: this.props.user.dateNaissance,
+              description: this.props.user.description,
+               }} >
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="name"
-                  label="Nom-Prénom"             
-                  rules={[{ required: true, message: 'Entrer votre Nom Prenom' }]}>
-                  <Input placeholder="Entrer votre Nom Prenom" />
+                  name="nom"
+                  label="Nom"             
+                  rules={[{ required: true, message: 'Entrer votre nom' }]} >
+                  <Input placeholder="Entrer votre nom" disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
               <Form.Item
-                  name="username"
-                  label="Pseudo"
-                  rules={[{ required: true, message: 'Entrer votre pseudo' }]}>
-                  <Input placeholder="Entrer votre pseudo" />
+                  name="prenom"
+                  label="Prénom"
+                  rules={[{ required: true, message: 'Entrer votre prénom' }]}>
+                  <Input placeholder="Entrer votre prénom" disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -61,7 +72,7 @@ class Profile extends Component {
                   name="nationalite"
                   label="Nationalité"
                   rules={[{ required: true, message: 'Entrer votre nationalité' }]}>
-                  <Input placeholder="Entrer votre nationalité" />
+                  <Input placeholder="Entrer votre nationalité" disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -69,17 +80,17 @@ class Profile extends Component {
                   name="ville"
                   label="Ville"
                   rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}>
-                  <Input placeholder="Entrer votre lieu de résidence" />
+                  <Input placeholder="Entrer votre lieu de résidence" disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="tel"
-                  label="Téléphone"
-                  rules={[{ required: true, message: 'Entrer votre numéro de téléphone' }]}>
-                  <Input placeholder="Entrer votre numero de téléphone" />
+                  name="pseudo"
+                  label="Pseudo"
+                  rules={[{ required: true, message: 'Entrer votre pseudo' }]}>
+                  <Input placeholder="Entrer votre pseudo" disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -87,7 +98,7 @@ class Profile extends Component {
                   name="dateNaissance"
                   label="Date de naissance"
                   rules={[{ required: true, message: 'Entrer votre date de naissance' }]}>
-                  <DatePicker style={{ width: '100%' }}/>
+                  <DatePicker style={{ width: '100%' }} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -102,133 +113,18 @@ class Profile extends Component {
                       message: 'Entrer une description du style de joueur que vous êtes',
                     },
                   ]}>
-                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." />
+                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
           </Form>
-        <Button type="primary" onClick={this.showDrawer}>
+            )
+          }
+
+        <Button type="primary" onClick={this.showDrawer} >
            Modifier
         </Button>
-        <Drawer
-          title="Modifier vos information"
-          width={720}
-          onClose={this.onClose}
-          visible={this.state.visible}
-          bodyStyle={{ paddingBottom: 80 }}
-          footer={
-            <div
-              style={{
-                textAlign: 'right',
-              }}
-            >
-              <Button
-                onClick={this.onClose}
-                style={{ marginRight: 8 }}
-              >
-                Cancel
-              </Button>
-              <Button onClick={this.onClose} type="primary">
-                Submit
-              </Button>
-            </div>
-          }
-        >
-          <Form layout="vertical" hideRequiredMark>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="name"
-                  label="Nom-Prénom"
-                  rules={[{ required: true, message: 'Entrer votre Nom Prenom' }]}
-                >
-                  <Input placeholder="Entrer votre Nom Prenom" />
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-              <Form.Item
-                  name="username"
-                  label="Pseudo"
-                  rules={[{ required: true, message: 'Entrer votre pseudo' }]}
-                >
-                  <Input placeholder="Entrer votre pseudo" />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="nationalite"
-                  label="Nationalité"
-                  rules={[{ required: true, message: 'Entrer votre nationalité' }]}
-                >
-                  <Input placeholder="Entrer votre nationalité" />
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="ville"
-                  label="Ville"
-                  rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}
-                >
-                  <Input placeholder="Entrer votre lieu de résidence" />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                  name="tel"
-                  label="Téléphone"
-                  rules={[{ required: true, message: 'Entrer votre numéro de téléphone' }]}
-                >
-                  <Input placeholder="Entrer votre numero de téléphone" />
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="dateNaissance"
-                  label="Date de naissance"
-                  rules={[{ required: true, message: 'Entrer votre date de naissance' }]}
-                >
-                  <DatePicker
-                    style={{ width: '100%' }}
-                    
-                  />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={24}>
-                <Form.Item
-                  name="description"
-                  label="Description"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Entrer une description du style de joueur que vous êtes',
-                    },
-                  ]}
-                >
-                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." />
-                </Form.Item>
-                <Form.Item
-        name="avatar"
-        label="Avatar"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
-        extra="insérer une image de profil"
-      >
-        <Upload name="logo" action="/upload.do" listType="picture">
-          <Button>
-            <UploadOutlined /> Click to upload
-          </Button>
-        </Upload>
-      </Form.Item>
-              </Col>
-            </Row>
-          </Form>
-        </Drawer>
+        <UpdateProfile visible={this.state.visible} onClose={this.onClose} />
       </Col>
       </Row>
       </body>
@@ -236,4 +132,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default connect (mapStateToProps) (Profile);
