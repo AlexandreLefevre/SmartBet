@@ -16,6 +16,16 @@ class Profile extends Component {
   
   state = { visible: false };
 
+  state = {
+    nom: this.state.nom ,
+    prenom: this.state.prenom ,
+    pseudo: this.state.pseudo,
+    nationalite: this.state.nationalite,
+    ville: this.state.ville,
+    dateNaissance: this.state.dateNaissance,
+    description: this.state.description,
+}
+
   showDrawer = () => {
     this.setState({
       visible: true,
@@ -38,21 +48,21 @@ class Profile extends Component {
            <Avatar size={64} icon={<UserOutlined />} />
         </div>
             <Form layout="vertical" hideRequiredMark  initialValues={{ 
-              nom: this.state.nom,
-              prenom: this.state.prenom,
-              pseudo: this.state.pseudo,
-              nationalite: this.state.nationalite,
-              ville: this.state.ville,
-              dateNaissance: this.state.dateNaissance,
-              description: this.state.description,
+              nom: this.props.user.nom,
+              prenom: this.props.user.prenom,
+              pseudo: this.props.user.pseudo,
+              nationalite: this.props.user.nationalite,
+              ville: this.props.user.ville,
+              dateNaissance: this.props.user.dateNaissance,
+              description: this.props.user.description,
                }} >
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
                   name="nom"
                   label="Nom"             
-                  rules={[{ required: true, message: 'Entrer votre nom' }]} >
-                  <Input placeholder="Entrer votre nom" disabled="disabled"/>
+                  rules={[{ required: true }]} >
+                  <Input placeholder={this.props.user.nom || "Entrer votre nom"} disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -60,7 +70,7 @@ class Profile extends Component {
                   name="prenom"
                   label="Prénom"
                   rules={[{ required: true, message: 'Entrer votre prénom' }]}>
-                  <Input placeholder="Entrer votre prénom" disabled="disabled"/>
+                  <Input placeholder={this.props.user.prenom || "Entrer votre prénom"} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -70,7 +80,7 @@ class Profile extends Component {
                   name="nationalite"
                   label="Nationalité"
                   rules={[{ required: true, message: 'Entrer votre nationalité' }]}>
-                  <Input placeholder="Entrer votre nationalité" disabled="disabled"/>
+                  <Input placeholder={this.props.user.nationalite ||"Entrer votre nationalité"} disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -78,7 +88,7 @@ class Profile extends Component {
                   name="ville"
                   label="Ville"
                   rules={[{ required: true, message: 'Entrer votre lieu de résidence' }]}>
-                  <Input placeholder="Entrer votre lieu de résidence" disabled="disabled"/>
+                  <Input placeholder={this.props.user.ville ||"Entrer votre lieu de résidence"} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -88,7 +98,7 @@ class Profile extends Component {
                   name="pseudo"
                   label="Pseudo"
                   rules={[{ required: true, message: 'Entrer votre pseudo' }]}>
-                  <Input placeholder="Entrer votre pseudo" disabled="disabled"/>
+                  <Input placeholder={this.props.user.pseudo ||"Entrer votre pseudo"} disabled="disabled"/>
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -96,7 +106,7 @@ class Profile extends Component {
                   name="dateNaissance"
                   label="Date de naissance"
                   rules={[{ required: true, message: 'Entrer votre date de naissance' }]}>
-                  <DatePicker style={{ width: '100%' }} disabled="disabled"/>
+                  <DatePicker style={{ width: '100%' }} placeholder={this.props.user.dateNaissance || "Choisissez votre date de naissance."} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
@@ -111,7 +121,7 @@ class Profile extends Component {
                       message: 'Entrer une description du style de joueur que vous êtes',
                     },
                   ]}>
-                  <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." disabled="disabled"/>
+                  <Input.TextArea rows={4} placeholder={this.props.user.description ||"Entrer une description du style de joueur que vous êtes."} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>

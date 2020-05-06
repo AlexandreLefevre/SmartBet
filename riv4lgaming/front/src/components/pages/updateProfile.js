@@ -24,6 +24,20 @@ class updateProfile extends Component {
     description: this.state.description || "",
 }
 
+shouldComponentUpdate(nextProps, nextState) {
+  if(this.props.user !== nextProps.user){
+    this.setState({nom: this.state.nom || "",
+    prenom: this.state.prenom || "",
+    pseudo: this.state.pseudo || "",
+    nationalite: this.state.nationalite || "",
+    ville: this.state.ville || "",
+    dateNaissance: this.state.dateNaissance || "",
+    description: this.state.description || "",})
+  }
+  return true
+}
+
+
 onClose = () => {
   this.setState({
     visible: false,
@@ -125,7 +139,15 @@ render () {
             </div>
           }
         >
-          <Form layout="vertical" hideRequiredMark>
+          <Form layout="vertical" hideRequiredMark initialValues={{
+            nom: this.state.nom,
+            prenom: this.state.prenom,
+            pseudo: this.state.pseudo,
+            nationalite: this.state.nationalite,
+            ville: this.state.ville,
+            dateNaissance: this.state.dateNaissance,
+            description: this.state.description,
+          }}>
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
@@ -133,7 +155,7 @@ render () {
                   label="Nom"
                   rules={[{ required: true, message: 'Entrer votre Nom' }]}
                 >
-                  <Input placeholder="Entrer votre Nom" onChange={this.updatNom} />
+                  <Input placeholder="Entrer votre Nom" value={this.state.nom} onChange={this.updatNom} />
                 </Form.Item>
               </Col>
               <Col span={12}>

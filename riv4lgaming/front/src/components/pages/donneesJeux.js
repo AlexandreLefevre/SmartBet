@@ -45,27 +45,27 @@ class DonneesJeux extends Component {
 
   updatJoueurSC2 = (e) => {
     //console.log(e.target.value);
-    this.setState({joueurSC2: e.target.value, joueurSC2: e.target.value});
+    this.setState({joueurSC2: e.target.value });
   }
 
   updatJoueurLOL = (e) => {
     //console.log(e.target.value);
-    this.setState({joueurLOL: e.target.value, joueurLOL: e.target.value});
+    this.setState({joueurLOL: e.target.value});
   }
 
   updatJoueurCSGO = (e) => {
     //console.log(e.target.value);
-    this.setState({joueurCSGO: e.target.value, joueurCSGO: e.target.value});
+    this.setState({joueurCSGO: e.target.value});
   }
 
   updatJoueurRL = (e) => {
     //console.log(e.target.value);
-    this.setState({joueurRL: e.target.value, joueurRL: e.target.value});
+    this.setState({joueurRL: e.target.value});
   }
 
   updatJoueurVL = (e) => {
     //console.log(e.target.value);
-    this.setState({joueurVL: e.target.value, joueurVL: e.target.value});
+    this.setState({joueurVL: e.target.value});
   }
 
   updatDivisionSC2 = (e) => {
