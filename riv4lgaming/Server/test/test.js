@@ -225,3 +225,57 @@ describe('Fail login account error mdp => create()', function () {
     })
   })
 })
+describe('Succes create new tournament => create()', function () {
+  this.timeout(5000)
+
+  before('Processing', function () {
+    apiResponse = chakram.post('http://localhost:4000/createTournament', {email:'tongrescyril@gmail.com', pseudo: 'flokime', password: 'flokiki', passwordVerify: 'flokiki'})
+    return apiResponse
+  })
+  after( async () => {
+    console.log("destroyer")
+    try {
+      await UserModel.remove({email: "tongrescyril@gmail.com"})
+      console.log("desr")
+    }
+    catch (err) {
+      console.log(err)
+    }
+  })
+
+  it('should return status 200', function () {
+    return expect(apiResponse).to.have.json(function (json) {
+      try{
+        console.log(json)
+        expect(json).to.equal("Tournoi created")
+        return expect(apiResponse).to.have.status(200)
+      }
+      catch(err){
+        console.log(err)
+      }
+    })
+  })
+})
+
+describe('Fail create new tournament existed=> create()', function () {
+  this.timeout(5000)
+
+  before('Processing', function () {
+    apiResponse = chakram.post('http://localhost:4000/creatTournament', {email:'tongrescyril26@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki', passwordVerify: 'flokikiki'})
+    return apiResponse
+  })
+
+  it('should return status 409', function () {
+    return expect(apiResponse).to.have.json(function (json)
+    {
+      try{
+        console.log(json)
+        expect(json).to.equal("Ce nom de tournoi est déjà utilisé.")
+        return expect(apiResponse).to.have.status(409)
+      }
+      catch(err){
+        console.log(err)
+      }
+    })
+  })
+})
