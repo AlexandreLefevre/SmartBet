@@ -36,21 +36,6 @@ describe('#find()', function() {
   });
 });*/
 
-
-/*describe('fail find user function => create()', function () {
-  before('Processing', function () {
-    apiResponse = chakram.get('http://localhost:4000/loginAccount', {})
-    return apiResponse
-})
-  
-  it('should return status 404', function () {
-    return expect(apiResponse).to.have.json(function (json) {
-      expect(json.message).to.equal("Nous n'avons pas trouvé l'utilisateur.")
-      return expect(apiResponse).to.have.status(404)
-    })
-  })
-})*/
-
 // post create account
 describe("start of test", function (){
 
@@ -225,22 +210,14 @@ describe('Fail login account error mdp => create()', function () {
     })
   })
 })
+
+//port tournament
 describe('Succes create new tournament => create()', function () {
   this.timeout(5000)
 
   before('Processing', function () {
-    apiResponse = chakram.post('http://localhost:4000/createTournament', {email:'tongrescyril@gmail.com', pseudo: 'flokime', password: 'flokiki', passwordVerify: 'flokiki'})
+    apiResponse = chakram.post('http://localhost:4000/createTournament', {name:'starcrat'})
     return apiResponse
-  })
-  after( async () => {
-    console.log("destroyer")
-    try {
-      await UserModel.remove({email: "tongrescyril@gmail.com"})
-      console.log("desr")
-    }
-    catch (err) {
-      console.log(err)
-    }
   })
 
   it('should return status 200', function () {
@@ -261,7 +238,7 @@ describe('Fail create new tournament existed=> create()', function () {
   this.timeout(5000)
 
   before('Processing', function () {
-    apiResponse = chakram.post('http://localhost:4000/creatTournament', {email:'tongrescyril26@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki', passwordVerify: 'flokikiki'})
+    apiResponse = chakram.post('http://localhost:4000/creatTournament', {name: "ok"})
     return apiResponse
   })
 

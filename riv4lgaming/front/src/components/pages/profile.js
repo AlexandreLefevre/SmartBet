@@ -29,7 +29,6 @@ class Profile extends Component {
   };
 
   render() {
-    console.log("c'est props", this.props)
     return (
       <body>
         <Row>
@@ -39,13 +38,13 @@ class Profile extends Component {
            <Avatar size={64} icon={<UserOutlined />} />
         </div>
             <Form layout="vertical" hideRequiredMark  initialValues={{ 
-              nom: this.props.user.nom,
-              prenom: this.props.user.prenom,
-              pseudo: this.props.user.pseudo,
-              nationalite: this.props.user.nationalite,
-              ville: this.props.user.ville,
-              dateNaissance: this.props.user.dateNaissance,
-              description: this.props.user.description,
+              nom: this.state.nom,
+              prenom: this.state.prenom,
+              pseudo: this.state.pseudo,
+              nationalite: this.state.nationalite,
+              ville: this.state.ville,
+              dateNaissance: this.state.dateNaissance,
+              description: this.state.description,
                }} >
             <Row gutter={16}>
               <Col span={12}>
@@ -120,7 +119,7 @@ class Profile extends Component {
         <Button type="primary" onClick={this.showDrawer} >
            Modifier
         </Button>
-        <UpdateProfile visible={this.state.visible} onClose={this.onClose} />
+        <UpdateProfile user={this.props.user} visible={this.state.visible} onClose={this.onClose} />
       </Col>
       </Row>
       </body>

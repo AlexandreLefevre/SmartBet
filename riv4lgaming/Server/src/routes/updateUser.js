@@ -4,11 +4,11 @@ function updateUserRoute(app){
 
 app.delete('/profile', async (req, res) => {
     await UserModel.delete({email: req.query.email})
-    res.send('user détruit')
+    return res.send('user détruit')
 })
 
 app.put('/profile', async (req, res) => { 
-    const user = await UserModel.findOneAndUpdate({email: req.query.email}, 
+    const user = await UserModel.findOneAndUpdate({email: req.body.email}, 
         {nom: req.body.nom,
             prenom: req.body.prenom,
             pseudo: req.body.pseudo,
@@ -21,24 +21,22 @@ app.put('/profile', async (req, res) => {
         }},{
             new: true,
         })
-        res.send({user: user})
-        await myUser.save()
+        return res.send({user: user})
 })
 
 app.post('/profile', async (req, res) => {
     console.log(req.body);
-    await myUser.save()
-    res.send('Account updated') //requête fini on envoie rien après
+    return res.send('Account updated') //requête fini on envoie rien après
 })
 
 app.get('/profile', async (req, res) => {
         const user = await UserModel.findOne({email: req.query.email})
         console.log('user =>',user);
-        res.send({user: user})
+        return res.send({user: user})
   })
 
 app.put('/donneesJ', async (req, res) => { 
-    const user = await UserModel.findOneAndUpdate({email: req.query.email}, 
+    const user = await UserModel.findOneAndUpdate({email: req.body.email}, 
         {
             joueurSC2: req.body.joueurSC2,
             divisionSC2: req.body.divisionSC2,
@@ -57,8 +55,7 @@ app.put('/donneesJ', async (req, res) => {
         }},{
             new: true,
         })
-        res.send({user: user})
-        await myUser.save()
+        return res.send({user: user})
     })
 }
 

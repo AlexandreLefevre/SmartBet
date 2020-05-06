@@ -15,13 +15,13 @@ class updateProfile extends Component {
     state = { visible: true };
 
   state = {
-    nom: "",
-    prenom: "",
-    pseudo: "",
-    nationalite: "",
-    ville: "",
-    dateNaissance: "",
-    description: "",
+    nom: this.state.nom || "",
+    prenom: this.state.prenom || "",
+    pseudo: this.state.pseudo || "",
+    nationalite: this.state.nationalite || "",
+    ville: this.state.ville || "",
+    dateNaissance: this.state.dateNaissance || "",
+    description: this.state.description || "",
 }
 
 onClose = () => {
@@ -79,6 +79,7 @@ onClose = () => {
       method: 'put',
       url: 'http://localhost:4000/profile',
       data: {
+        email: this.props.user.email,
         nom: this.state.nom,
         prenom: this.state.prenom,
         pseudo: this.state.pseudo,

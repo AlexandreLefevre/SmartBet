@@ -82,9 +82,10 @@ app.post('/createAccount', async (req, res) => {
   app.get('/verifToken', async (req, res) => {
     try {
       const decoded = jwt.verify(req.query.token, 'hfeuazifohz');
+      const user = await UserModel.findOne({_id: decoded._id}).select("-password")
       console.log(decoded)
       res.send({
-        decoded: decoded
+        decoded: user
       })
     } catch(err) {
       console.log("mauvaise signature");
