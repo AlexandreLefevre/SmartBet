@@ -256,3 +256,26 @@ describe('Succes create new tournament => create()', function () {
     })
   })
 })
+
+describe('Fail create new tournament existed=> create()', function () {
+  this.timeout(5000)
+
+  before('Processing', function () {
+    apiResponse = chakram.post('http://localhost:4000/creatTournament', {email:'tongrescyril26@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki', passwordVerify: 'flokikiki'})
+    return apiResponse
+  })
+
+  it('should return status 409', function () {
+    return expect(apiResponse).to.have.json(function (json)
+    {
+      try{
+        console.log(json)
+        expect(json).to.equal("Ce nom de tournoi est déjà utilisé.")
+        return expect(apiResponse).to.have.status(409)
+      }
+      catch(err){
+        console.log(err)
+      }
+    })
+  })
+})
