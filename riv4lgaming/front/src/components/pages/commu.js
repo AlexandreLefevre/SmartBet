@@ -26,6 +26,8 @@ class Forum extends Component {
         </Col>
           <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
           <Title level={3} >Présentez vous </Title>
+          <br></br>
+          <p>Présentez vous sur le discord afin qu'un modérateur <br></br> vous donne les permissions d'accéder à tous les différents channel de discussions</p>
           </Col>
         </Row>
         </body>
