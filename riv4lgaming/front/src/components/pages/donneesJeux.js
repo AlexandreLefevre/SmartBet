@@ -97,13 +97,13 @@ class DonneesJeux extends Component {
             </Radio.Group>
           <p>Choisissez votre division sur le jeu.</p>
             <Radio.Group >
-              <Radio > Bronze </Radio>
-              <Radio > Argent </Radio>
-              <Radio > Or </Radio>
-              <Radio > Platine </Radio>
-              <Radio > Diamand </Radio>
-              <Radio > Maître </Radio>
-              <Radio > Grand maître </Radio>
+              <Radio value ="Bronze"> Bronze </Radio>
+              <Radio value = "Argent"> Argent </Radio>
+              <Radio value ="Or"> Or </Radio>
+              <Radio value ="Platine"> Platine </Radio>
+              <Radio value="Diamand" > Diamand </Radio>
+              <Radio value="Maître"> Maître </Radio>
+              <Radio value="Grand Maitre"> Grand maître </Radio>
             </Radio.Group><br /><br />
             <Button type="primary" htmlType="submit" onClick={this.updateUserJeu}>Modifier mes données.</Button>
           </Form>
