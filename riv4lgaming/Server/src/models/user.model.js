@@ -23,6 +23,18 @@ const UserSchema = new mongoose.Schema({
   nationalite: String,
   description: String,
   dateNaissance: Date,
+  joueurSC2: Boolean,
+  divisionSC2: String,
+  raceSC2: String,
+  joueurLOL: Boolean, 
+  divisionLOL: String,
+  roleLOL: String,
+  joueurVL: Boolean,
+  divisionVL: String, 
+  joueurCSGO: Boolean, 
+  divisionCSGO: String,
+  joueurRL: Boolean,
+  divisionRL: String,
 }, {
   timestamps: true,
 })
