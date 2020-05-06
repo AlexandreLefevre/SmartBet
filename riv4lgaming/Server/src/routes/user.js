@@ -40,7 +40,10 @@ app.post('/createAccount', async (req, res) => {
     await myUser.save()
     await envoiEmail(req.body.email, verif)
     res.send('Account created') //requête fini on envoie rien après
-  }catch(err) {console.log(err)}
+  }
+  catch(err) {
+    res.status(409).send("Le psesudo ou l'email est déjà utilisé.")  
+    console.log(err)}
 })
     app.get('/createAccount', async (req, res) => {
         const user = await UserModel.findOne({email: req.query.email})
