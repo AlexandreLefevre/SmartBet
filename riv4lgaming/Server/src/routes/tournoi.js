@@ -19,6 +19,7 @@ app.put('/createTournament', async (req, res) => {
 
 app.post('/createTournament', async (req, res) => {
     console.log(req.body);
+    try{
     const myTournoi = new TournoiModel({
       name: req.body.name,
       jeu: req.body.jeu,
@@ -28,7 +29,11 @@ app.post('/createTournament', async (req, res) => {
     })
     await myTournoi.save()
     res.send('Tournoi created') 
-});
+}
+    catch(err) {
+        res.status(409).send("Ce nom de tournoi est déjà utilisé.")  
+        console.log(err)}
+    });
 
     app.get('/createTournament', async (req, res) => {
         const tournoi = await TournoiModel.findOne({name: req.query.name})
