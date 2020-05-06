@@ -1,8 +1,8 @@
 import React,  {Component} from 'react'
 import {Link} from 'react-router-dom'
-import { Checkbox, Row, Col } from "antd"
+import { Checkbox, Row, Col, Typography } from "antd"
 
-
+const { Title } = Typography;
 
 class Tournois extends Component {
   updatJeu = (e) => {
@@ -17,8 +17,8 @@ class Tournois extends Component {
           <Col flex="100px"></Col>
           <Col flex="auto">
           <div>
-            <h1>Tournoi</h1>
-                <p><Link to="/createTournament"> CLiquez ici pour créer votre tournoi.</Link></p>
+            <Title level={1} >Tournoi</Title>
+              <p> <Link to="/createTournament"> CLiquez ici pour créer votre tournoi.</Link></p>
                 <div>
                   <p>Choisissez les jeux pour lesquels vous voulez voir les tournois.</p>
                   <Checkbox type="checkbox" onChange={this.updatJeu} value="SC2" /> Starcraf 2
@@ -27,7 +27,9 @@ class Tournois extends Component {
                   <Checkbox type="checkbox" onChange={this.updatJeu} value="LOL" /> League of Legends
                   <Checkbox type="checkbox" onChange={this.updatJeu} value="Valorant" /> Valorant
                 </div><br />
-              <p>Liste des tournois</p>
+                <div>
+                  <Title level={2} >Liste des tournois </Title>
+                </div>
           </div>
           </Col>
         </Row>

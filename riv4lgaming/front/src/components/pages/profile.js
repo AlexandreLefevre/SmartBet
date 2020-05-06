@@ -38,7 +38,6 @@ class Profile extends Component {
         <div>
            <Avatar size={64} icon={<UserOutlined />} />
         </div>
-        {this.props.user && this.props.user.email !== "" && (
             <Form layout="vertical" hideRequiredMark  initialValues={{ 
               nom: this.props.user.nom,
               prenom: this.props.user.prenom,
@@ -118,9 +117,6 @@ class Profile extends Component {
               </Col>
             </Row>
           </Form>
-            )
-          }
-
         <Button type="primary" onClick={this.showDrawer} >
            Modifier
         </Button>
