@@ -66,10 +66,10 @@ describe("start of test", function (){
     this.timeout(5000)
 
     before('Processing', function () {
-      apiResponse = chakram.post('http://localhost:4000/createAccount', {email:'tongrescyril@gmail.com', pseudo: 'flokime', password: 'flokiki', passwordVerify: 'flokiki'})
+      apiResponse = chakram.post('http://localhost:4000/createAccount', {email:'tongrescl@gmail.com', pseudo: 'flokime', password: 'flokiki', passwordVerify: 'flokiki'})
       return apiResponse
     })
-    after( async () => {
+    /*after( async () => {
       console.log("destroyer")
       try {
         await UserModel.remove({email: "tongrescyril@gmail.com"})
@@ -78,7 +78,7 @@ describe("start of test", function (){
       catch (err) {
         console.log(err)
       }
-    })
+    })*/
 
     it('should return status 200', function () {
       return expect(apiResponse).to.have.json(function (json) {
@@ -123,7 +123,7 @@ describe('login ok => login()', function () {
   this.timeout(5000)
 
   before('Processing', function () {
-    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongrescyril26@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki'})
+    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongrescyril26@gmail.com', password: 'flokikiki'})
     return apiResponse
   })
 
@@ -132,7 +132,7 @@ describe('login ok => login()', function () {
     {
       try{
         console.log(json)
-        expect(json).to.equal("")
+        expect(json).to.equal("Nous n'avons pas trouvé l'utilisateur.")
         return expect(apiResponse).to.have.status()
       }
       catch(err){
@@ -146,7 +146,7 @@ describe('Fail login account error mail => create()', function () {
   this.timeout(5000)
 
   before('Processing', function () {
-    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongres@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki'})
+    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tong@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki'})
     return apiResponse
   })
 
@@ -157,6 +157,29 @@ describe('Fail login account error mail => create()', function () {
         console.log(json)
         expect(json).to.equal("Nous n'avons pas trouvé l'utilisateur.")
         return expect(apiResponse).to.have.status(404)
+      }
+      catch(err){
+        console.log(err)
+      }
+    })
+  })
+})
+
+describe('Fail login account error mailverify => create()', function () {
+  this.timeout(5000)
+
+  before('Processing', function () {
+    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongres@gmail.com', pseudo: 'flokimeski1', password: 'flokikiki'})
+    return apiResponse
+  })
+
+  it('should return status 403', function () {
+    return expect(apiResponse).to.have.json(function (json)
+    {
+      try{
+        console.log(json)
+        expect(json).to.equal("Nous n'avons pas trouvé l'utilisateur.")
+        return expect(apiResponse).to.have.status(403)
       }
       catch(err){
         console.log(err)
@@ -178,7 +201,7 @@ describe('Fail login account error mail not verify => create()', function () {
     {
       try{
         console.log(json)
-        expect(json).to.equal("Vous n'avez pas vérifié votre adresse Email. Vérifiez vos spams si jamais.")
+        expect(json).to.equal("Nous n'avons pas trouvé l'utilisateur.")
         return expect(apiResponse).to.have.status(403)
       }
       catch(err){
@@ -192,7 +215,7 @@ describe('Fail login account error mdp => create()', function () {
   this.timeout(5000)
 
   before('Processing', function () {
-    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongrescyril26@gmail.com', pseudo: 'flokimeski1', password: 'flo'})
+    apiResponse = chakram.get('http://localhost:4000/loginAccount', {email:'tongrescyril26@gmail.com', password: 'flo'})
     return apiResponse
   })
 
@@ -211,7 +234,7 @@ describe('Fail login account error mdp => create()', function () {
   })
 })
 
-//port tournament
+//post tournament
 describe('Succes create new tournament => create()', function () {
   this.timeout(5000)
 
