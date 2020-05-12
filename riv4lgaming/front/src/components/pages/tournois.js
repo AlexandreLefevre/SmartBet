@@ -10,7 +10,6 @@ const listData = [];
 for (let i = 0; i < 8; i++) {
   listData.push({
     title: `nom tournois ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
       'jeux, division(s) autorisée(s)',
     content:
