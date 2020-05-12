@@ -2,20 +2,19 @@ import React,  {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { Checkbox, Row, Col, Typography } from "antd"
 import { List, Avatar, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { UserAddOutlined, UserOutlined, UserDeleteOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
 const listData = [];
-for (let i = 0; i < 23; i++) {
+for (let i = 0; i < 8; i++) {
   listData.push({
-    href: 'http://ant.design',
-    title: `ant design part ${i}`,
+    title: `nom tournois ${i}`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
-      'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+      'jeux, division(s) autorisée(s)',
     content:
-      'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+      'description du tournois',
   });
 }
 
@@ -53,7 +52,7 @@ class Tournois extends Component {
                   <Title level={2} >Liste des tournois </Title>
                 </div>
           </div>
-          </Col>
+        
           <div>
             <List
                     itemLayout="vertical"
@@ -69,21 +68,21 @@ class Tournois extends Component {
                       <List.Item
                         key={item.title}
                         actions={[
-                          <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-                          <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-                          <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                          <IconText icon={UserOutlined} text="nbr participant" key="list-vertical-star-o" />,
+                          <IconText icon={UserAddOutlined} text="Rejoindre le tournois" key="list-vertical-like-o" />,
+                          <IconText icon={UserDeleteOutlined} text="Quitter le tournois" key="list-vertical-message" />,
                         ]}
                         extra={
                           <img
                             width={272}
                             alt="logo"
-                            src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                            src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg"
                           />
                         }
                       >
                         <List.Item.Meta
                           avatar={<Avatar src={item.avatar} />}
-                          title={<a href={item.href}>{item.title}</a>}
+                          title={<a href={item.href}>{item.title}</a>} 
                           description={item.description}
                         />
                         {item.content}
@@ -91,6 +90,7 @@ class Tournois extends Component {
                     )}
                   />,
               </div>
+              </Col>
         </Row>
       </body>
      );

@@ -27,7 +27,7 @@ class Header extends Component {
             </Menu.Item>
             <Menu.Item>
             {this.props.user && this.props.user.email === "" && (
-              <Link to="/login">Login / Register</Link>
+              <Link to="/login">Connexion / Enregistrement</Link>
             )}
               </Menu.Item>
             {//this.props.user && this.props.user.email !== "" && (
