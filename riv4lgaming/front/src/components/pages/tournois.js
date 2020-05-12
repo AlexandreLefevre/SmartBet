@@ -1,8 +1,28 @@
 import React,  {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { Checkbox, Row, Col, Typography } from "antd"
+import { List, Avatar, Space } from 'antd';
+import { UserAddOutlined, UserOutlined, UserDeleteOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
+
+const listData = [];
+for (let i = 0; i < 8; i++) {
+  listData.push({
+    title: `nom tournois ${i}`,
+    description:
+      'jeux, division(s) autorisée(s)',
+    content:
+      'description du tournois',
+  });
+}
+
+const IconText = ({ icon, text }) => (
+  <Space>
+    {React.createElement(icon)}
+    {text}
+  </Space>
+);
 
 class Tournois extends Component {
   updatJeu = (e) => {
@@ -31,7 +51,45 @@ class Tournois extends Component {
                   <Title level={2} >Liste des tournois </Title>
                 </div>
           </div>
-          </Col>
+        
+          <div>
+            <List
+                    itemLayout="vertical"
+                    size="large"
+                    pagination={{
+                      onChange: page => {
+                        console.log(page);
+                      },
+                      pageSize: 3,
+                    }}
+                    dataSource={listData}
+                    renderItem={item => (
+                      <List.Item
+                        key={item.title}
+                        actions={[
+                          <IconText icon={UserOutlined} text="nbr participant" key="list-vertical-star-o" />,
+                          <IconText icon={UserAddOutlined} text="Rejoindre le tournois" key="list-vertical-like-o" />,
+                          <IconText icon={UserDeleteOutlined} text="Quitter le tournois" key="list-vertical-message" />,
+                        ]}
+                        extra={
+                          <img
+                            width={272}
+                            alt="logo"
+                            src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg"
+                          />
+                        }
+                      >
+                        <List.Item.Meta
+                          avatar={<Avatar src={item.avatar} />}
+                          title={<a href={item.href}>{item.title}</a>} 
+                          description={item.description}
+                        />
+                        {item.content}
+                      </List.Item>
+                    )}
+                  />,
+              </div>
+              </Col>
         </Row>
       </body>
      );
