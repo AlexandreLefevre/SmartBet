@@ -24,6 +24,29 @@ const IconText = ({ icon, text }) => (
   </Space>
 );
 
+/*showTournoi = (e) => {
+  e.preventDefault()
+  console.log("affichage tournoi");
+  axios({
+    method: 'get',
+    url: 'http://localhost:4000/tournoi',
+    data: {
+      
+    }
+  })
+.then((response) => {
+  console.log(response)
+  this.setState({error: ""})
+})
+.catch(r => {
+  if (r.response){
+      this.setState({
+      error: r.response.data
+      })
+    }
+  })
+}*/
+
 class Tournois extends Component {
   updatJeu = (e) => {
     console.log(e.target.value);

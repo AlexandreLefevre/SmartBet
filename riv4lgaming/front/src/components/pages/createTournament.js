@@ -1,9 +1,11 @@
 import React,  {Component} from 'react'
 import { connect } from "react-redux"
 import axios from 'axios'
-import { Radio, Checkbox, Select, Button, Input, Col, Row} from 'antd'
+import { Radio, Checkbox, Select, Button, Input, Col, Row, DatePicker, TimePicker} from 'antd'
 import Form from 'antd/lib/form/Form';
+import moment from 'moment';
 
+const format = 'HH:mm';
 const { Option} = Select;
 const { TextArea } = Input;
 const mapStateToProps = state => {
@@ -96,6 +98,8 @@ class CreateTournament extends Component {
                 <div>
                 <p>Choisissez un nom pour votre tournoi (celui-ci doit être différent des autres tournois existant déjà).</p>
                     <Input type="textarea" placeholder="Nom de votre tournoi." required onChange={this.updatName} /><br /><br />
+                <p>Choississez la date et l'heure de votre tournoi.</p>
+                <DatePicker  /> <TimePicker defaultValue={moment('12:08', format)} format={format} /><br />
                 <p>Choisissez un jeu pour votre tournoi.</p>
                     <Radio.Group onChange={this.updatJeu} value={this.state.jeu}>
                       <Radio value={"SC2"}>Starcraf 2</Radio>
@@ -113,7 +117,6 @@ class CreateTournament extends Component {
                         <Option value ={"64"}>64</Option>
                         <Option value ={"128"}>128</Option>
                     </Select><br /><br />
-                <p>Les matchs se déroulent en BO1 par défaut, vous pouvez choisir à partir de quel round ceux-ci passent en BO3, BO5. </p><br />
                 {this.state.jeu === "SC2" && (<div>
                   <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
                     <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
