@@ -51,7 +51,6 @@ class Tournois extends Component {
                   <Title level={2} >Liste des tournois </Title>
                 </div>
           </div>
-        
           <div>
             <List
                     itemLayout="vertical"
@@ -88,8 +87,8 @@ class Tournois extends Component {
                       </List.Item>
                     )}
                   />,
-              </div>
-              </Col>
+            </div>
+          </Col>
         </Row>
       </body>
      );
