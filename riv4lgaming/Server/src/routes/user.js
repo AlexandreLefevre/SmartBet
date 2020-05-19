@@ -4,6 +4,16 @@ const {envoiEmail} = require('../util.js')
 const UserModel = require('../models/user.model')
 var jwt = require('jsonwebtoken')
 
+/**
+ * @api {get} /user/:id Request User information
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id Users unique ID.
+ *
+ * @apiSuccess {String} firstname Firstname of the User.
+ * @apiSuccess {String} lastname  Lastname of the User.
+ */
 
 function createUserRoute(app){
 app.get('/', (req, res) => res.send('Hello World!'))
