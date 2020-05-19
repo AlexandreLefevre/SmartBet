@@ -1,6 +1,16 @@
 const UserModel = require('../models/user.model')
 const TournoiModel = require('../models/tournoi.model')
 
+/**
+ * @api {get} /user/:id Request User information
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ * @apiParam {Number} id Users unique ID.
+ *
+ * @apiSuccess {String} firstname Firstname of the User.
+ * @apiSuccess {String} lastname  Lastname of the User.
+ */
 function createTournoiRoute(app){
 app.delete('/createTournament', async (req, res) => {
     await TournoiModel.delete({name: req.query.name})
