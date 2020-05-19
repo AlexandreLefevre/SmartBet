@@ -9,7 +9,7 @@ const TournoiSchema = new mongoose.Schema({
   jeu : String, 
   divisions : Array, 
   description: String,
-  date : timestamps,
+  //date : timestamps,
   auteur: {
     type: mongoose.Schema.ObjectId, ref: 'user'
   },
