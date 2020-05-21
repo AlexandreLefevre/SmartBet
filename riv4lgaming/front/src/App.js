@@ -29,13 +29,14 @@ import Termandprivacy from './components/pages/termandprivacy'
 import VerifEmail from './components/pages/verifEmail'
 import createTournament from './components/pages/createTournament'
 import Middleware from './components/middleware/index'
+import TournoisPool from './components/pages/tournoiPool'
 
 
 //include
 import 'antd/dist/antd.css'
 import { initialize, set, pageview } from 'react-ga'
 
-const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 
+const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 initialize('UA-161704283-1', {
   debug: false,
@@ -64,7 +65,7 @@ class App extends Component {
          <Header />
          <Route path="/" component={logPageView} />
          <Switch>
-         <Route exact path='/' component= {Homepage} />      
+         <Route exact path='/' component= {Homepage} />
          <Route exact path='/login' component= {LoginPage} />
          <Route exact path='/register' component= {RegisterPage} />
          <Route exact path='/donneesJ' component= {DonneesJeux} />
@@ -72,18 +73,19 @@ class App extends Component {
          <Route exact path='/profile' component= {Profile} />
          <Route exact path='/commu' component= {Commu} />
          <Route exact path='/tournois' component= {Tournois} />
+         <Route exact path='/tournois/:id' component={TournoisPool} />
          <Route exact path='/cache' component= {cache} />
          <Route exact path='/faq' component= {Faq} />
          <Route exact path='/tandp' component= {Termandprivacy} />
          <Route exact path='/verifEmail' component= {VerifEmail} />
          <Route exact path='/createTournament' component= {createTournament} />
          </Switch>
-        
+
 
          <Footer />
          </Middleware>
        </div>
-       
+
        </Router>
        </CookiesProvider>
        </Provider>
