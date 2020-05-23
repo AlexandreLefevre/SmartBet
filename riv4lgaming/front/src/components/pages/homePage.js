@@ -59,11 +59,9 @@ class Homepage extends Component {
               Les tournois seront mis à dispositions de tous.<br />
               Chaque tournoi sera différent en fonction de son créateur. N'importe qui pourra créer un tournoi et définir les paramètres de celui-ci. 
               Les paramètres sélectionnables sont les suivants :<br />
-                - avec ou sans loser bracket(Qu'est ce qu'un loser bracket ?)<br />
                 - avec ou sans restriction de niveau(tournoi autorisé à tout le monde ou que à certains "rang" sur le jeu)<br />
                 - nombre de participants maximum<br />
                 - les types de BO en fonction du round dans le tournoi<br />
-                - avec ou sans cash prize<br />
               </p>
           </Col>
         </Row>

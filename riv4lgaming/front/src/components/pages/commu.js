@@ -27,7 +27,7 @@ class Forum extends Component {
           <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
           <Title level={3} >Acceptez Les règles </Title>
           <br></br>
-          <p>Afin de trier les utilisateurs, il faut absolument <br></br>  approuvez les règles avant l'utilisation complète <br></br> du serveur discord. Un staff est disponnible <br></br> 7j/7 afin de vous aidez. Si vous êtes <br></br> actifs et sérieux, vous pourrez montez en grade <br></br> sur le serveur afin d'avoir plus de responsabilités </p>
+          <p>Afin de trier les utilisateurs, il faut absolument <br></br>  approuvez les règles avant l'utilisation complète <br></br> du serveur discord. Un staff est disponnible <br></br> 7j/7 afin de vous aidez. Si vous êtes <br></br> actifs et sérieux, vous pourrez montez en grade <br></br> sur le serveur afin d'avoir plus de responsabilités.<br></br> Vous pourrez ainsi aidez les utilisateurs de <br></br>  la communauté si vous le souhaitez bien évidemment. </p>
           </Col>
         </Row>
         </body>
