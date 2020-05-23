@@ -45,7 +45,7 @@ class Homepage extends Component {
             </Title >
               <p>Comment cette partie du site fonctionne ?<br />
               C'est très simple, vous rejoignez le discord mis en place pour la communauté : <br />
-              Vous acceptez les règles d'utilisations et vous aurez ensuite accès à plusieurs salons vocaux et textuels afin de paufiné l'organisation
+              Vous acceptez les règles d'utilisations et vous aurez ensuite accès à plusieurs salons vocaux et textuels afin de paufiner l'organisation
               de vos tournois. Vous pourrez aussi discuté vocalement avec vos partenaires durant le tournoi . Un staff est disponible 7j/7 afin de vous aidez
               si vous avez le moindre problème.
               </p>
