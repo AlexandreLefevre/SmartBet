@@ -102,7 +102,7 @@ class Tournois extends Component {
         key={item.title}
         actions={[
 
-          <Popover title="Pour voir le bracket il faut que tous les joueurs soienrt inscris">
+          <Popover title="Pour voir le bracket il faut que tous les joueurs soient inscris">
  <Link disabled={!(item.participants.length === item.nbr_participants_max)} to={`/tournois/${item._id}`}>Voir le tournois </Link>,
  </Popover>,
             <Button onClick={()=> {this.joinTournament(item)}} icon={<UserAddOutlined/>}>Rejoindre le tournois</Button>,
