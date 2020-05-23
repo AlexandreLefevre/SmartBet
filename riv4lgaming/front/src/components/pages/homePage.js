@@ -41,13 +41,13 @@ class Homepage extends Component {
           </Col>
           <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
             <Title level={2}>
-              <p>Forum</p>
+              <p>Communauté</p>
             </Title >
               <p>Comment cette partie du site fonctionne ?<br />
-              C'est très simple, vous créez votre annonce en indiquant ce que vous recherchez par exemple : <br />
-              "[LOL Mid Gold] Recherche teammates pour ranked."<br />
-              Vous indiquez le jeu auquel votre annonce correspond, votre niveau sur ce jeu, et la position que vous jouez(certains jeux ne reprennent pas toutes les carastériques montrées),
-              et pour finir le titre de votre annonce résumant pourquoi vous la créée.
+              C'est très simple, vous rejoignez le discord mis en place pour la communauté : <br />
+              Vous acceptez les règles d'utilisations et vous aurez ensuite accès à plusieurs salons vocaux et textuels afin de paufiné l'organisation
+              de vos tournois. Vous pourrez aussi discuté vocalement avec vos partenaires durant le tournoi . Un staff est disponible 7j/7 afin de vous aidez
+              si vous avez le moindre problème.
               </p>
           </Col>
           <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
