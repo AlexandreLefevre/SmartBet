@@ -19,7 +19,6 @@ class CreateTournament extends Component {
         name: "",
         jeu : "",
         nbr_participants_max : "",
-        nbr_matchs : "",
         divisions :[],
       }
       
