@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
 
-  mongoose.connection.openUri(`mongodb://localhost:27017/riv4lgamingDB`, {
+  mongoose.connection.openUri(`mongodb+srv://riv4lgaming:riv4lG24@riva4lgaming-2eqb4.mongodb.net/test?retryWrites=true&w=majority`, {
     keepAlive: true,
     reconnectTries: Number.MAX_VALUE,
     useNewUrlParser: true,
