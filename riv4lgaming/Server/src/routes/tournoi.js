@@ -60,6 +60,7 @@ function createTournoiRoute(app){
           nbr_participants_max: req.body.nbr_participants_max,
           divisions: req.body.divisions,
           description: req.body.description,
+          image: req.body.image,
         })
         await myTournoi.save()
         res.send('Tournoi created')

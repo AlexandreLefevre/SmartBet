@@ -20,6 +20,7 @@ class CreateTournament extends Component {
         jeu : "",
         nbr_participants_max : "",
         divisions :[],
+        image: "",
       }
       
       onChange = e => {
@@ -59,6 +60,11 @@ class CreateTournament extends Component {
         this.setState({description: e.target.value});
       }
 
+      updatImage = (e) => {
+        //console.log(e.target.value);
+        this.setState({image: e.target.value});
+      }
+
       creatTournament = (e) => {
         e.preventDefault()
         console.log("création de tournoi", this.state.name, this.state.jeu, this.state.nbr_participants_max, this.state.nbr_matchs, this.state.divisions, this.state.description);
@@ -72,6 +78,7 @@ class CreateTournament extends Component {
             nbr_matchs: this.state.nbr_matchs,
             divisions: this.state.divisions,
             description: this.state.description,
+            image: this.state.image,
           }
         })
       .then((response) => {
@@ -86,7 +93,7 @@ class CreateTournament extends Component {
           }
         })
       }
-
+    
     render(){
       console.log(this.state.divisions);
         return (
@@ -116,6 +123,7 @@ class CreateTournament extends Component {
                         <Option value ={"64"}>64</Option>
                         <Option value ={"128"}>128</Option>
                     </Select><br /><br />
+
                 {this.state.jeu === "SC2" && (<div>
                   <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
                     <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze 
@@ -161,11 +169,45 @@ class CreateTournament extends Component {
                     <Checkbox type="checkbox" value="Champion" onChange={this.updatDivisions}/> Champion 
                     <Checkbox type="checkbox" value="Grand_Champ" onChange={this.updatDivisions}/> Grand Champion 
                   </div>)}
+                  <br />
+                  {this.state.jeu === "VL" && (<div>
+                  <p>Veuillez sélectionner les divisions qui pourront participer à votre tournoi.</p>
+                    <Checkbox type="checkbox" value="Fer" onChange={this.updatDivisions}/> Fer 
+                    <Checkbox type="checkbox" value="Bronze" onChange={this.updatDivisions}/> Bronze
+                    <Checkbox type="checkbox" value="Argent" onChange={this.updatDivisions}/> Argent 
+                    <Checkbox type="checkbox" value="Gold" onChange={this.updatDivisions}/> Or 
+                    <Checkbox type="checkbox" value="Platine" onChange={this.updatDivisions}/> Platine 
+                    <Checkbox type="checkbox" value="Diamand" onChange={this.updatDivisions}/> Diamand 
+                    <Checkbox type="checkbox" value="Immortel" onChange={this.updatDivisions}/> Immortel
+                    <Checkbox type="checkbox" value="Valorant" onChange={this.updatDivisions}/> Valorant  
+                </div>)}
+
+                  {this.state.jeu === "LOL" &&(<div>
+                    <Checkbox type="checkbox" value="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" onChange={this.updatImage}/> Image
+                </div>)}
+
+                {this.state.jeu === "SC2" &&(<div>
+                    <Checkbox type="checkbox" value="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" onChange={this.updatImage}/> Image
+                </div>)}
+
+                {this.state.jeu === "RL" &&(<div>
+                    <Checkbox type="checkbox" value="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" onChange={this.updatImage}/> Image
+                </div>)}
+
+                {this.state.jeu === "CSGO" &&(<div>
+                    <Checkbox type="checkbox" value="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" onChange={this.updatImage}/> Image
+                </div>)}
+
+                {this.state.jeu === "VL" &&(<div>
+                    <Checkbox type="checkbox" value="https://img-4.linternaute.com/72AL5YjxNpGzkRWPKHkz9bOh5Yc=/1240x/smart/7c678e09bda44a0ba8c5badec236bbdb/ccmcms-linternaute/15846348.jpg" onChange={this.updatImage}/> Image
+                </div>)}
+                  
                 <br /><br />
                 <p>Nous vous laissons le choix de définir le map pool dans la description de votre événement ci dessous. </p>
-                <TextArea rows={4} placeholder="Description de votre tournoi." onChange={this.updatDescription}/>,
+                <TextArea rows={4} placeholder="Description de votre tournoi." onChange={this.updatDescription}/>
                 <br /><br />
                 <Button type="primary" htmlType="submit" onClick={this.creatTournament}>Créer le tournoi</Button>
+                
               </div>
               </Form>
             </Col>
