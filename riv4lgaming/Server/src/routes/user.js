@@ -96,7 +96,6 @@ app.post('/createAccount', async (req, res) => {
  * 
  *
  * @apiSuccess {String} email Email of the User.
- * @apiSuccess {}
  * 
  * @apiSuccesExample 
  * {
