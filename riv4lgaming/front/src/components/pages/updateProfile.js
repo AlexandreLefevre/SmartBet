@@ -201,8 +201,9 @@ render () {
                       message: 'Entrer une description du style de joueur que vous êtes',
                     },
                   ]}
-                >
+                > 
                   <Input.TextArea rows={4} placeholder="Entrer une description du style de joueur que vous êtes." onChange={this.updatDescription} />
+                  <Button type="primary" htmlType="submit" onClick={this.updateUser}>Mettre à jour le profil.</Button>
                 </Form.Item>
               </Col>
             </Row>
