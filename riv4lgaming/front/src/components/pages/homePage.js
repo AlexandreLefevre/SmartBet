@@ -1,8 +1,7 @@
 import React,  {Component} from 'react'
 import { connect } from "react-redux"
-import { Row, Col, Typography  } from 'antd'
+import { Row, Col, Typography, Carousel  } from 'antd'
 
-const style = {padding: '8px 30px'};
 const { Title } = Typography;
 
 const mapStateToProps = state => {
@@ -66,34 +65,41 @@ class Homepage extends Component {
           </Col>
         </Row>
          <p>Les jeux disponibles sont les suivants : <br /></p> 
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-      <Col className="gutter-row" span={6}>
-        <div style={style}>
+      <Row >
+      <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}></Col>
+      <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+      <Carousel autoplay>
+      
+        <div>
           <a href="https://starcraft2.com/fr-fr/" target="_blank">
               < img src="https://c4.wallpaperflare.com/wallpaper/636/601/259/queen-of-blades-sarah-kerrigan-starcraft-starcraft-ii-wallpaper-preview.jpg" alt="sc2" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
-      </Col>
-      <Col className="gutter-row" span={6}>
-        <div style={style}>
+      
+        <div>
           <a href="https://play.euw.leagueoflegends.com/fr_FR" target="_blank">
               <img src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg" alt="LoL" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
-      </Col>
-      <Col className="gutter-row" span={6}>
-        <div style={style}>
+      
+        <div>
           <a href="https://blog.counter-strike.net/" target="_blank">
             <img src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg" alt="CSGO" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
-      </Col>
-      <Col className="gutter-row" span={6}>
-        <div style={style}>
+      
+        <div>
           <a href="https://www.rocketleague.com/" target="_blank">
             <img src="https://image.jeuxvideo.com/medias-md/154823/1548225017-2830-card.jpg" alt="RL" style={{width:"100%", height:"100%"}}></img>
           </a>
         </div>
+
+        <div>
+          <a href="https://beta.playvalorant.com/fr-fr/" target="_blank">
+              < img src="https://img-4.linternaute.com/72AL5YjxNpGzkRWPKHkz9bOh5Yc=/1240x/smart/7c678e09bda44a0ba8c5badec236bbdb/ccmcms-linternaute/15846348.jpg" alt="sc2" style={{width:"100%", height:"100%"}}></img>
+          </a>
+        </div>
+      </Carousel>
       </Col>
     </Row>
     </body>

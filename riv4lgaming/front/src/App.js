@@ -35,6 +35,7 @@ import TournoisPool from './components/pages/tournoiPool'
 //include
 import 'antd/dist/antd.css'
 import { initialize, set, pageview } from 'react-ga'
+import './CSS/_config.css'
 
 const store = createStore (rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
