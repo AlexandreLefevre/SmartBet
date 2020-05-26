@@ -120,8 +120,8 @@ class Tournois extends Component {
         >
         <List.Item.Meta
         avatar={<Avatar src={item.avatar} />}
-        title={<a href={item.href}>{item.title}</a>}
-        description={item.description}
+        title={<a href={item.href}>{item.name}</a>}
+        description={'jeu : ' + item.jeu + '   |  ' + 'division : ' + item.divisions + '   |  ' + item.description + '  |  Nombre de particpant max  :  ' + item.nbr_participants_max} 
         />
         {item.content}
         </List.Item>
