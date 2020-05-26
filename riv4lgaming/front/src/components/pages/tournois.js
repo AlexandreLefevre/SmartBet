@@ -122,7 +122,7 @@ class Tournois extends Component {
             <IconText icon={UserOutlined} text={`${item && item.participants ? item.participants.length :  0} nbr participant`} key="list-vertical-star-o" />,
 
         ]}
-        {item.jeu === LoL (
+        {item.jeu === 'LOL' (
         extra={ 
           imageLoL 
         }
