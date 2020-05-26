@@ -6,6 +6,18 @@ import { UserAddOutlined, UserOutlined, UserDeleteOutlined } from '@ant-design/i
 import axios from 'axios'
 import { connect } from "react-redux"
 
+const imageLoL = <img
+width={272}
+alt="logo"
+src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg"
+/>
+
+const imageCSGO = <img
+width={272}
+alt="logo"
+src="https://image.jeuxvideo.com/medias-md/153573/1535728452-9770-card.jpg"
+/>
+
 const { Title } = Typography;
 
 const mapStateToProps = state => {
@@ -110,14 +122,11 @@ class Tournois extends Component {
             <IconText icon={UserOutlined} text={`${item && item.participants ? item.participants.length :  0} nbr participant`} key="list-vertical-star-o" />,
 
         ]}
-        extra={
-          <img
-          width={272}
-          alt="logo"
-          src="https://img.lemde.fr/2018/05/22/0/218/1164/582/1440/0/60/0/7fbe49a_10861-9kwk39.j7dht.jpg"
-          />
+        {item.jeu === LoL (
+        extra={ 
+          imageLoL 
         }
-        >
+        )}>
         <List.Item.Meta
         avatar={<Avatar src={item.avatar} />}
         title={<a href={item.href}>{item.name}</a>}
