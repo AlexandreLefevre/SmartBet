@@ -84,7 +84,7 @@ onClose = () => {
     console.log("user update");
     axios({
       method: 'put',
-      url: 'http://localhost:4000/profile',
+      url: 'http://35.180.238.11:4000/profile',
       data: {
         email: this.props.user.email,
         nom: this.state.nom,
