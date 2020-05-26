@@ -31,7 +31,7 @@ class Tournois extends Component {
 
         const response = await axios({
           method: 'get',
-          url: 'http://localhost:4000/getAllTournaments',
+          url: 'http://35.180.238.11:4000/getAllTournaments',
         })
         this.setState({tournaments: response.data.tournaments})
       } catch (e) {
@@ -42,7 +42,7 @@ class Tournois extends Component {
     async joinTournament (tournoi) {
       const response = await axios({
             method: 'put',
-            url: `http://localhost:4000/joinTournament?user=${this.props.user._id}&tournoi=${tournoi._id}`,
+            url: `http://35.180.238.11:4000/joinTournament?user=${this.props.user._id}&tournoi=${tournoi._id}`,
           })
       console.log('response ==>',response);
 
@@ -50,7 +50,7 @@ class Tournois extends Component {
     async leaveTournament (tournoi) {
       const response = await axios({
             method: 'put',
-            url: `http://localhost:4000/leaveTournament?user=${this.props.user._id}&tournoi=${tournoi._id}`,
+            url: `http://35.180.238.11:4000/leaveTournament?user=${this.props.user._id}&tournoi=${tournoi._id}`,
           })
       console.log('response ==>',response);
 

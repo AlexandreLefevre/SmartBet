@@ -11,7 +11,7 @@ class Middleware extends Component {
       if (token) {
         axios({
         method: 'get',
-        url: `http://localhost:4000/verifToken?token=${token}`,
+        url: `http://35.180.238.11:4000/verifToken?token=${token}`,
       })
     .then((response) => {
       console.log(response);

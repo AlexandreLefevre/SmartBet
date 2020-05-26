@@ -108,7 +108,7 @@ class DonneesJeux extends Component {
     console.log("user update");
     axios({
       method: 'put',
-      url: 'http://localhost:4000/donneesj',
+      url: 'http://35.180.238.11:4000/donneesj',
       data: {
         email: this.props.user.email,
         joueurSC2: this.state.joueurSC2,

@@ -175,7 +175,7 @@ class TournoiPool extends Component {
       console.log(params);
         const response = await axios({
           method: 'get',
-          url: `http://localhost:4000/getTournament?tournoi=${params.id}`,
+          url: `http://35.180.238.11:4000/getTournament?tournoi=${params.id}`,
         })
         console.log('Res =>',response.data);
 

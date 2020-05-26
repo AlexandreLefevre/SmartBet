@@ -70,7 +70,7 @@ class CreateTournament extends Component {
         console.log("création de tournoi", this.state.name, this.state.jeu, this.state.nbr_participants_max, this.state.nbr_matchs, this.state.divisions, this.state.description);
         axios({
           method: 'post',
-          url: 'http://localhost:4000/createTournament',
+          url: 'http://35.180.238.11:4000/createTournament',
           data: {
             name: this.state.name,
             jeu: this.state.jeu,

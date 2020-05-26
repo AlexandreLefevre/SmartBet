@@ -27,7 +27,7 @@ class LoginPage extends Component {
     console.log("login account", this.state.email, this.state.password);
     axios({
       method: 'get',
-      url: `http://localhost:4000/loginAccount?email=${this.state.email}&password=${this.state.password}`,
+      url: `http://35.180.238.11:4000/loginAccount?email=${this.state.email}&password=${this.state.password}`,
     })
   .then((response) => {
     console.log(response);
