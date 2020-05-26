@@ -20,7 +20,6 @@ class updateProfile extends Component {
     pseudo: this.state.pseudo || "",
     nationalite: this.state.nationalite || "",
     ville: this.state.ville || "",
-    dateNaissance: this.state.dateNaissance || "",
     description: this.state.description || "",
 }
 
@@ -31,7 +30,6 @@ shouldComponentUpdate(nextProps, nextState) {
     pseudo: this.state.pseudo || "",
     nationalite: this.state.nationalite || "",
     ville: this.state.ville || "",
-    dateNaissance: this.state.dateNaissance || "",
     description: this.state.description || "",})
   }
   return true
@@ -76,11 +74,6 @@ onClose = () => {
     this.setState({ville: e.target.value});
   }
 
-  updatDateNaissance = (e) => {
-    //console.log(e.target.value);
-    this.setState({dateNaissance: e.target.value});
-  }
-
   updatDescription = (e) => {
     //console.log(e.target.value);
     this.setState({description: e.target.value});
@@ -99,7 +92,6 @@ onClose = () => {
         pseudo: this.state.pseudo,
         nationalite: this.state.nationalite,
         ville: this.state.ville,
-        dateNaissance: this.state.dateNaissance,
         description: this.state.description,
       }
     })
@@ -145,7 +137,6 @@ render () {
             pseudo: this.state.pseudo,
             nationalite: this.state.nationalite,
             ville: this.state.ville,
-            dateNaissance: this.state.dateNaissance,
             description: this.state.description,
           }}>
             <Row gutter={16}>
@@ -196,17 +187,6 @@ render () {
                   rules={[{ required: true, message: 'Entrer votre pseudo' }]}
                 >
                   <Input placeholder="Entrer votre pseudo" onChange={this.updatPseudo}/>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="dateNaissance"
-                  label="Date de naissance"
-                  rules={[{ required: true, message: 'Entrer votre date de naissance' }]}
-                >
-                  <DatePicker
-                    style={{ width: '100%' }} onChange={this.updatDateNaissance}
-                  />
                 </Form.Item>
               </Col>
             </Row>

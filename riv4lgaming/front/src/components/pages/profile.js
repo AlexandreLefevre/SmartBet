@@ -22,7 +22,6 @@ class Profile extends Component {
     pseudo: this.state.pseudo,
     nationalite: this.state.nationalite,
     ville: this.state.ville,
-    dateNaissance: this.state.dateNaissance,
     description: this.state.description,
 }
 
@@ -53,7 +52,6 @@ class Profile extends Component {
               pseudo: this.props.user.pseudo,
               nationalite: this.props.user.nationalite,
               ville: this.props.user.ville,
-              dateNaissance: this.props.user.dateNaissance,
               description: this.props.user.description,
                }} >
             <Row gutter={16}>
@@ -99,14 +97,6 @@ class Profile extends Component {
                   label="Pseudo"
                   rules={[{ required: true, message: 'Entrer votre pseudo' }]}>
                   <Input placeholder={this.props.user.pseudo ||"Entrer votre pseudo"} disabled="disabled"/>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item
-                  name="dateNaissance"
-                  label="Date de naissance"
-                  rules={[{ required: true, message: 'Entrer votre date de naissance' }]}>
-                  <DatePicker style={{ width: '100%' }} placeholder={this.props.user.dateNaissance || "Choisissez votre date de naissance."} disabled="disabled"/>
                 </Form.Item>
               </Col>
             </Row>
