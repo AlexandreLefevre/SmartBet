@@ -30,7 +30,7 @@ class Header extends Component {
               <Link to="/login">Connexion / Enregistrement</Link>
             )}
               </Menu.Item>
-            {//this.props.user && this.props.user.email !== "" && (
+            {this.props.user && this.props.user.email !== "" && (
             <SubMenu title={<>
                 <UserOutlined />
                    Profil
@@ -41,7 +41,7 @@ class Header extends Component {
                   <Menu.Item key="setting:3"><Link to="/histo">Historique</Link></Menu.Item>
                   <Menu.Item key="setting:4"><LoginOutlined />Déconnexion</Menu.Item>
             </SubMenu>
-            //)
+            )
           }
         </Menu>
       </PageHeader>
