@@ -81,7 +81,7 @@ onClose = () => {
 
   updateUser = (e) => {
     e.preventDefault()
-    console.log("user update");
+    //console.log("user update");
     axios({
       method: 'put',
       url: 'http://35.180.238.11:4000/profile',

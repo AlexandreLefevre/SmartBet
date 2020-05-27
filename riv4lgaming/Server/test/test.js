@@ -1,15 +1,17 @@
 var should = require('chai').should();
 var chakram = require('chakram'),
     expect = chakram.expect;
+var chai = require("chai");
 const UserModel = require('../src/models/user.model')
 const TournoiModel = require('../src/models/tournoi.model')
 const Index = require ("../src/routes/index.js")
 const tournoi = require ("../src/routes/tournoi.js")
 const update = require ("../src/routes/updateUser.js")
 const user = require ("../src/routes/user.js")
+var assert = chai.assert;
 
 
-// post create account
+/*
 describe("start of test", function (){
 
   describe('Fail create new account mdp => create()', function () {
@@ -51,7 +53,7 @@ describe("start of test", function (){
       catch (err) {
         console.log(err)
       }
-    })*/
+    })
 
     it('should return status 200', function () {
       return expect(apiResponse).to.have.json(function (json) {
@@ -251,4 +253,59 @@ describe('Fail create new tournament existed=> create()', function () {
       }
     })
   })
-})
+})*/
+
+describe('array division', function() {
+  it('array vide', function(){
+    var arr = [];
+    assert.equal(arr.length, 0, 'Array length was not 0');
+  });
+  it('rempli avec des divisions', function(){
+    async () => {
+      const response = await chai.request(app)
+      .post('http://localhost:4000/createTournament')
+      .send({
+        divsions: ['Argent','Gold','Platine']
+      });
+      assert.equal(arr.lengt, 3, 'array length is 3')
+    }
+  });
+  // Further code for tests goes here
+});
+
+describe('no user', function() {
+it('vérification des champs du form enregistrement',
+  async () => {
+    const response = await chai.request(app)
+      .post("http://localhost:4000/register")
+      .send({
+        pseudo: 'testUnit',
+        email: 'test@gmail.com',
+        password: 'test123456',
+        passwordVerify: 'test123456'
+      });
+    expect(response.body).to.be.an('object');
+    expect(response.body.status).to.equal(200);
+    expect(response.body.data).to.have.property('email');
+    expect(response.body.data).to.have.property('pseudo');
+    expect(response.body.data).to.have.property('password');
+    expect(response.body.data).to.have.property('passwordVerify');
+  });
+});
+
+
+describe('no user', function() {
+  it('connexion user',
+    async () => {
+      const response = await chai.request(app)
+        .get('http://localhost:4000/login')
+        .send({
+          email: 'test@gmail.com',
+          password: 'test123456',
+        });
+      expect(response.body).to.be.an('object');
+      expect(response.body.status).to.equal(200);
+      expect(response.body.data).to.have.property('email');
+      expect(response.body.data).to.have.property('password');
+    });
+  });

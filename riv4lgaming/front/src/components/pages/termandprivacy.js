@@ -8,7 +8,7 @@ class Termandprivacy extends Component {
         <h1>Term and privacy</h1>
 
         <p>
-            c privé bg !
+            Les termes sont les termes.
         </p>
 
        </div>

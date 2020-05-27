@@ -13,12 +13,12 @@ class LoginPage extends Component {
     error: "",
   }
   updatEmail = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({email:e.target.value});
   }
 
   updatPassword = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     this.setState({password:e.target.value});
   }
 

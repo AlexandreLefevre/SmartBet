@@ -30,7 +30,7 @@ class RegisterPage extends Component {
 
   creatAccount = (e) => {
     e.preventDefault()
-    console.log("création account", this.state.email, this.state.pseudo);
+    //console.log("création account", this.state.email, this.state.pseudo);
     axios({
       method: 'post',
       url: 'http://35.180.238.11:4000/createAccount',
